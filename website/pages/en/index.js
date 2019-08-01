@@ -64,9 +64,9 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href="#info">What is Geyser?</Button>
+            <Button href="http://ci.geysermc.org/">Download</Button>
+            <Button href={docUrl('getting-started.html')}>Getting Started</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -92,26 +92,18 @@ class Index extends React.Component {
       </Container>
     );
 
-    const FeatureCallout = () => (
-      <div
-        className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
-
-    const TryOut = () => (
-      <Block id="try">
+    const Info = () => (
+      <Block id="info">
         {[
           {
             content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
+              'Geyser is a proxy allowing for Minecraft: Bedrock Edition clients ' +
+              'to join Minecraft: Java Edition servers. It''s completely standalone and runs as ' +
+              'its own process, meaning it is not installed as a plugin.' +
+              'Take a look [**here**](https://geysermc.org/docs/getting-started.html) to learn how to set it up!',
+            image: `${baseUrl}img/geyser_logo.png`,
             imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
+            title: 'What is Geyser?',
           },
         ]}
       </Block>
@@ -122,43 +114,12 @@ class Index extends React.Component {
         {[
           {
             content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
+              'Geyser was written as a proxy rather than a plugin because ' +
+              'with it as a proxy, you can join ANY Minecraft: Java Edition server ' +
+              'with Bedrock. Cool or what?',
+            image: `https://github.com/GeyserMC/Geyser/blob/master/screenshots/version.png`,
             imageAlign: 'right',
-            title: 'Description',
-          },
-        ]}
-      </Block>
-    );
-
-    const LearnHow = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
-          },
-        ]}
-      </Block>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Why a Proxy?',
           },
         ]}
       </Block>

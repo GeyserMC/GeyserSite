@@ -1,8 +1,7 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Info": ["getting-started", "creating-a-startup-script", "understanding-the-config", "how-geyser-works"],
+    "Plugin API": ["plugin-api"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]

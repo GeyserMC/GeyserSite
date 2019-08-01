@@ -67,7 +67,6 @@ class HomeSplash extends React.Component {
             <Button href="#info">What is Geyser?</Button>
             <Button href="http://ci.geysermc.org/">Download</Button>
             <Button href={docUrl('getting-started.html')}>Getting Started</Button>
-            <Button href="github.com/GeyserMC/Geyser">Github</Button>
           </PromoSection>
         </div>
       </SplashContainer>

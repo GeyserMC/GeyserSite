@@ -1,0 +1,156 @@
+body {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+	margin: 10px;
+	padding: 10px 10px 10px 10px;
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: background-color 1.5s ease;
+}
+
+.navbar .btn.nav-link {
+	text-decoration: none;
+	background-color: #fff;
+	border-radius: 50px;
+	color: black;
+}
+
+.navbar .btn.nav-link:hover {
+	text-decoration: none !important;
+	background-color: #009bcf;
+	color: white;
+}
+
+.navbar a:link {
+	color: #fff !important;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+	color: #009bcf !important;
+    text-decoration: none;
+}
+
+h1.text-center {
+	padding-bottom: 40px;
+}
+
+.card h5 {
+	font-size: 20px;
+}
+
+.section1 {
+	height: 100vh;
+	background-image: url('../img/background3.png');
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.section2 {
+	background-color: #212121;
+}
+
+.section2 .col {
+	padding: 80px 30px 30px 10px;
+}
+
+.section2 img {
+	height: 200px;
+	width: 400px;
+}
+
+.section3 {
+	background-color: #fff;
+}
+
+.section3 .col {
+	color: black;
+	padding: 80px 30px 30px 10px;
+}
+
+.section3 .col iframe {
+	-webkit-box-shadow: 4px 3px 13px 3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 3px 13px 3px rgba(0,0,0,0.75);
+	box-shadow: 4px 3px 13px 3px rgba(0,0,0,0.75);
+	border-radius: 2px;
+}
+
+.section4 {
+	background-color: #009bcf;
+}
+
+.section4 .col {
+	color: white;
+	padding: 80px 30px 30px 10px;
+}
+
+.section4 img {
+	height: 180px;
+	width: 600px;
+}
+
+.section5 {
+	background-color: #212121;
+	padding: 20px;
+}
+
+.section5 a:link {
+	color: #fff !important;
+    text-decoration: none;
+}
+
+.section5 a:hover {
+	color: #009bcf !important;
+    text-decoration: none;
+}
+
+.section5 .card {
+	background-color: #121212;
+	border-radius: 30px;
+	text-align: right;
+	padding-right: 20px;
+	min-width: 350px;
+	min-height: 150px;
+}
+
+.section5 .card-text {
+	font-size: 0.9em;
+}
+
+.section5 .col-sm {
+	padding: 15px;
+}
+
+.card i {
+	float: left;
+	font-size: 5em;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+}
+
+footer {
+	background-color: #121212;
+}
+
+footer a {
+	color: #fff;
+}
+
+footer a:hover {
+	color: #009bcf;
+}
+
+@media (max-width: 768px) {
+	.section5 .card {
+		padding: 10px;
+		float: center;
+		line-height: 1;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
+}

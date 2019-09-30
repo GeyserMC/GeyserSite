@@ -76,6 +76,9 @@ h1.text-center {
 	-moz-box-shadow: 4px 3px 13px 3px rgba(0,0,0,0.75);
 	box-shadow: 4px 3px 13px 3px rgba(0,0,0,0.75);
 	border-radius: 2px;
+	max-width: 500px;
+	width: 96vw;
+	height: 282px;
 }
 
 .section4 {
@@ -88,8 +91,8 @@ h1.text-center {
 }
 
 .section4 img {
-	height: 180px;
-	width: 600px;
+	max-width: 600px;
+	width: 97vw;
 }
 
 .section5 {

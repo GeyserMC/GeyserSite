@@ -110,6 +110,11 @@ h1.text-center {
     text-decoration: none;
 }
 
+.section5 a:visited {
+	color: #fff !important;
+    text-decoration: none;
+}
+
 .section5 .card {
 	background-color: #121212;
 	border-radius: 30px;

@@ -96,26 +96,40 @@ h1.text-center {
 }
 
 .section5 {
+	background-color: #002d15;
+}
+
+.section5 .col {
+	color: white;
+	padding: 80px 30px 30px 10px;
+}
+
+.section5 img {
+	max-width: 600px;
+	width: 97vw;
+}
+
+.section6 {
 	background-color: #212121;
 	padding: 20px;
 }
 
-.section5 a:link {
+.section6 a:link {
 	color: #fff !important;
     text-decoration: none;
 }
 
-.section5 a:hover {
+.section6 a:hover {
 	color: #009bcf !important;
     text-decoration: none;
 }
 
-.section5 a:visited {
+.section6 a:visited {
 	color: #fff !important;
     text-decoration: none;
 }
 
-.section5 .card {
+.section6 .card {
 	background-color: #121212;
 	border-radius: 30px;
 	text-align: right;
@@ -124,11 +138,11 @@ h1.text-center {
 	min-height: 150px;
 }
 
-.section5 .card-text {
+.section6 .card-text {
 	font-size: 0.9em;
 }
 
-.section5 .col-sm {
+.section6 .col-sm {
 	padding: 15px;
 }
 

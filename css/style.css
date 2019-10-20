@@ -43,6 +43,7 @@ h1.text-center {
 
 .section1 {
 	height: 100vh;
+	min-width: 400px;
 	background-image: url('../img/background3.png');
 	background-position: center top;
 	background-size: cover;
@@ -51,6 +52,7 @@ h1.text-center {
 
 .section2 {
 	background-color: #212121;
+	min-width: 400px;
 }
 
 .section2 .col {
@@ -64,6 +66,7 @@ h1.text-center {
 
 .section3 {
 	background-color: #fff;
+	min-width: 400px;
 }
 
 .section3 .col {
@@ -83,6 +86,7 @@ h1.text-center {
 
 .section4 {
 	background-color: #009bcf;
+	min-width: 400px;
 }
 
 .section4 .col {
@@ -98,6 +102,7 @@ h1.text-center {
 .section5 {
 	background-color: #212121;
 	padding: 20px;
+	min-width: 400px;
 }
 
 .section5 a:link {
@@ -120,7 +125,7 @@ h1.text-center {
 	border-radius: 30px;
 	text-align: right;
 	padding-right: 20px;
-	min-width: 350px;
+	min-width: 325px;
 	min-height: 150px;
 }
 

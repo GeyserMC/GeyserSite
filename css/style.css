@@ -26,6 +26,7 @@ body {
 .navbar a:link {
 	color: #fff !important;
     text-decoration: none;
+    transition: color 0.25s ease;
 }
 
 .navbar a:hover {
@@ -143,6 +144,7 @@ h1.text-center {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 30px;
+	transition: color 0.25s ease;
 }
 
 .card i:hover {

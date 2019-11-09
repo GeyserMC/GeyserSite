@@ -145,6 +145,10 @@ h1.text-center {
 	padding-left: 30px;
 }
 
+.card i:hover {
+    color: #009bcf;
+}
+
 footer {
 	background-color: #121212;
 }

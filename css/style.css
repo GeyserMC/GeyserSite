@@ -172,4 +172,8 @@ footer a:hover {
 		width: 100%;
 		overflow: hidden;
 	}
+	.logoimg {
+		width: 75%;
+		height: auto;
+	}
 }

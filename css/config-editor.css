@@ -1,0 +1,63 @@
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+#header {
+	padding-top: 1rem;
+}
+
+#loader-section, #export-section {
+	display: none;
+}
+
+#loader-section button.is-loading {
+    border-color: transparent;
+    font-size: 2em;
+}
+
+.is-vertical-center {
+	display: flex;
+	align-items: center;
+}
+
+#config-options {
+	padding-top: 0;
+}
+
+#config-options h3:first-child {
+	margin-top: 0;
+}
+
+#config-options h3 {
+	margin-top: 0.5rem;
+	margin-bottom: 0;
+}
+
+#config-options p {
+	margin-bottom: 0;
+}
+
+#file-overlay {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.1);
+	z-index: 999;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 175ms, opacity 175ms;
+
+	color: rgba(0,0,0,0.4);
+	font-weight: bold;
+	text-align: center;
+	line-height: 100vh;
+	font-size: 2em;
+}
+
+#file-overlay.highlight {
+	visibility: visible;
+	opacity: 1;
+}

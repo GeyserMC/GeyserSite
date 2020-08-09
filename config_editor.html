@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>GeyserMC: Config Editor</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" integrity="sha256-aPeK/N8IHpHsvPBCf49iVKMdusfobKo2oxF8lRruWJg=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-switch@2.0.0/dist/css/bulma-switch.min.css" integrity="sha256-jCV/cXwP13w0GNHLgFx6SFgTNAvJPvS5MIhuE30Ng08=" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/config-editor.css'>
+</head>
+<body>
+    <section class="section" id="header">
+        <div class="container">
+            <a class="button is-link" href="./">
+                <span class="icon is-small">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>Back</span>
+            </a>
+            <br>
+            <br>
+
+            <h1 class="title">
+                GeyserMC: Config Editor
+            </h1>
+            <p class="subtitle">
+                Please choose the config to import
+            </p>
+            <div id="loader-section">
+                <button class="button is-loading">Loading</button>
+            </div>
+            <div id="export-section">
+                <button class="button is-link" id="export">
+                    <span class="icon is-small">
+                        <i class="fas fa-download"></i>
+                    </span>
+                    <span>Export</span>
+                </button>
+                <br>
+                <b>or</b>
+            </div>
+              <div id="import-section" class="is-vertical-center">
+                <button class="button is-link" id="default-load">
+                    <span class="icon is-small">
+                        <i class="fas fa-sliders-h"></i>
+                    </span>
+                    <span>Default</span>
+                </button>
+                &nbsp;or&nbsp;
+                <div class="file is-link">
+                    <label class="file-label">
+                        <input class="file-input" type="file" id="file-load" accept=".yml">
+                        <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                            Upload
+                        </span>
+                        </span>
+                    </label>
+                </div>
+              </p>
+        </div>
+    </section>
+
+    <section class="section" id="config-options"></section>
+
+    <div id="file-overlay">Upload</div>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src='js/config-editor.js'></script>
+</body>
+</html>

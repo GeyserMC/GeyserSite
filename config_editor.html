@@ -77,38 +77,26 @@
             <div id="loader-section">
                 <button class="button is-loading">Loading</button>
             </div>
-            <div id="export-section">
-                <button class="button is-link" id="export">
-                    <span class="icon is-small">
-                        <i class="fas fa-download"></i>
-                    </span>
-                    <span>Export</span>
-                </button>
-                <br>
-                <b>or</b>
-            </div>
-              <div id="import-section" class="is-vertical-center">
-                <button class="button is-link" id="default-load">
-                    <span class="icon is-small">
-                        <i class="fas fa-sliders-h"></i>
-                    </span>
-                    <span>Default</span>
-                </button>
-                &nbsp;or&nbsp;
-                <div class="file is-link">
-                    <label class="file-label">
-                        <input class="file-input" type="file" id="file-load" accept=".yml">
-                        <span class="file-cta">
-                        <span class="file-icon">
-                            <i class="fas fa-upload"></i>
-                        </span>
-                        <span class="file-label">
-                            Upload
-                        </span>
-                        </span>
-                    </label>
+            <div class="row">
+                <div id="export-section" class="is-vertical-center">
+                    <button class="button is-link" id="export">
+                        <i class="fas fa-download"></i>&nbsp;<span>Export</span>
+                    </button>
+                    <span style="color: black;">&nbsp;or&nbsp;</span>
                 </div>
-              </p>
+                <div id="import-section" class="is-vertical-center">
+                    <button class="button is-link" id="default-load">
+                        <i class="fas fa-sliders-h"></i>&nbsp;<span>Default</span>
+                    </button>
+                    <span style="color: black;">&nbsp;or&nbsp;</span>
+                    <button class="button file is-link">
+                        <label>
+                            <input class="file-input" type="file" id="file-load" accept=".yml">
+                            <i class="fas fa-upload"></i>&nbsp;<span>Upload</span>
+                        </label>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -29,6 +29,10 @@ nav * {
 	padding-top: 0;
 }
 
+#config-options .container .card {
+	margin-bottom: 1rem;
+}
+
 #config-options h3:first-child {
 	margin-top: 0;
 }
@@ -64,4 +68,8 @@ nav * {
 #file-overlay.highlight {
 	visibility: visible;
 	opacity: 1;
+}
+
+.row {
+	margin: 0;
 }

@@ -55,7 +55,7 @@ body {
 .nav-logoimg {
 	height: 46px;
 	margin-left: 24px;
-	opacity: 1.0;
+	opacity: 0.0;
 	transition: opacity 1.5s ease;
 }
 

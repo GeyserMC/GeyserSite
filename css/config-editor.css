@@ -1,10 +1,16 @@
 html, body {
+	color: black;
 	margin: 0;
 	height: 100%;
 }
 
-nav * {
+nav #navbarNav ul li a {
 	color: black !important;
+}
+
+nav #navbarNav ul li a:hover {
+	color: #009bcf !important;
+    text-decoration: none;
 }
 
 #header {

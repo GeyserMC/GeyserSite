@@ -1,3 +1,8 @@
+html {
+	width: fit-content;
+    height: fit-content;
+}
+
 body {
 	color: white;
 	font-family: 'Montserrat', sans-serif;
@@ -6,8 +11,10 @@ body {
 .navbar {
 	margin: 10px;
 	padding: 10px 10px 10px 10px;
-	background-color: rgba(255, 255, 255, 0.1);
-	transition: background-color 1.5s ease;
+	background-color: rgba(255, 255, 255, 0.0);
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.0);
+	transition: all 1.5s ease;
+	border-radius: 25px;
 }
 
 .navbar .btn.nav-link {
@@ -34,12 +41,33 @@ body {
     text-decoration: none;
 }
 
+.navbar-nav .nav-link {
+    padding: 10px;
+}
+
+.nav-link i span {
+	font-size: 14px;
+}
+
+.nav-logoimg {
+	height: 46px;
+	margin-left: 24px;
+	opacity: 1.0;
+	transition: opacity 1.5s ease;
+}
+
+li.nav-item {
+	margin-right: 10px;
+}
+
 h1.text-center {
-	padding-bottom: 40px;
+	padding-bottom: 10px;
+	font-weight: bolder;
 }
 
 .card h5 {
 	font-size: 20px;
+	font-weight: bolder;
 }
 
 .section1 {
@@ -51,19 +79,31 @@ h1.text-center {
 	background-repeat: no-repeat;
 }
 
+.sections .col {
+	padding: 80px 30px 80px 10px;
+}
+.sections img {
+	width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.sections .col {
+		padding: 20px 20px 20px 20px;
+		width: 100%;
+	}
+	.sections img {
+		width: 95vw;
+	}
+}
+
 .section2 {
 	background-color: #212121;
 	min-width: 400px;
 }
 
-.section2 .col {
-	padding: 80px 30px 30px 10px;
-}
+.section2 .col {}
 
-.section2 img {
-	height: 200px;
-	width: 400px;
-}
+.section2 img {}
 
 .section3 {
 	background-color: #fff;
@@ -72,7 +112,6 @@ h1.text-center {
 
 .section3 .col {
 	color: black;
-	padding: 80px 30px 30px 10px;
 }
 
 .section3 .col iframe {
@@ -92,13 +131,9 @@ h1.text-center {
 
 .section4 .col {
 	color: white;
-	padding: 80px 30px 30px 10px;
 }
 
-.section4 img {
-	max-width: 600px;
-	width: 97vw;
-}
+.section4 img {}
 
 .section5 {
 	background-color: #212121;
@@ -125,7 +160,7 @@ h1.text-center {
 	background-color: #121212;
 	border-radius: 30px;
 	text-align: right;
-	padding-right: 20px;
+	padding: 25px;
 	min-width: 325px;
 	min-height: 150px;
 }
@@ -139,11 +174,7 @@ h1.text-center {
 }
 
 .card i {
-	float: left;
 	font-size: 5em;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 30px;
 	transition: color 0.25s ease;
 }
 
@@ -163,17 +194,38 @@ footer a:hover {
 	color: #009bcf;
 }
 
-@media (max-width: 768px) {
+.logoimg {
+	width: auto !important;
+}
+
+@media screen and (max-width: 768px) {
 	.section5 .card {
-		padding: 10px;
-		float: center;
+		padding: 15px;
 		line-height: 1;
 		position: relative;
 		width: 100%;
 		overflow: hidden;
 	}
 	.logoimg {
-		width: 75%;
+		width: 75% !important;
 		height: auto;
 	}
+}
+
+.section5 .container-fluid .row .col-sm .card .no-gutters {
+	margin: auto;
+}
+
+.s5-elements {
+	height: 100%;
+    display: inline-block;
+}
+
+.s5-icon {
+	width: 25%;
+	margin-right: 5%;
+}
+
+.s5-details {
+	width: 65%;
 }

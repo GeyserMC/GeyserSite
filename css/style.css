@@ -1,11 +1,14 @@
-html {
-	width: fit-content;
-    height: fit-content;
-}
-
 body {
 	color: white;
 	font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+	/* fixes some right side empty spaces on mobile */
+	html {
+		width: fit-content;
+		height: fit-content;
+	}
 }
 
 .navbar {

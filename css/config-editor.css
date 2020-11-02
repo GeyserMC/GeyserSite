@@ -13,6 +13,10 @@ nav #navbarNav ul li a:hover {
     text-decoration: none;
 }
 
+.nav-logoimg {
+	opacity: 1.0;
+}
+
 #header {
 	padding-top: 1rem;
 }

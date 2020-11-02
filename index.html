@@ -188,20 +188,22 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script>
             var gmc_nav_listener = function() {
+                let navbar = $(".navbar");
+                let navbar_logo = $('.nav-logoimg');
                 if ($(document).scrollTop() > 225) {
-                  $(".navbar").css("background-color", "rgba(0, 0, 0, 0.9)");
-                  $(".navbar").css("box-shadow", "0 .5rem 1rem rgba(0, 0, 0, 0.15)");
-                  $(".navbar").css("margin", "0px");
-                  $(".navbar").css("padding", "10px 10px 10px 10px");
-                  $(".navbar").css("border-radius", "0");
-                  $('.nav-logoimg').css("opacity", '1.0');
+                  navbar.css("background-color", "rgba(0, 0, 0, 0.9)");
+                  navbar.css("box-shadow", "0 .5rem 1rem rgba(0, 0, 0, 0.15)");
+                  navbar.css("margin", "0px");
+                  navbar.css("padding", "10px 10px 10px 10px");
+                  navbar.css("border-radius", "0");
+                  navbar_logo.css("opacity", '1.0');
                 } else {
-                  $(".navbar").css("background-color", "rgba(255, 255, 255, 0.0)");
-                  $(".navbar").css("box-shadow", "0 .5rem 1rem rgba(0, 0, 0, 0.0)");
-                  $(".navbar").css("margin", "10px");
-                  $(".navbar").css("padding", "5px 10px 5px 10px");
-                  $(".navbar").css("border-radius", "25px");
-                  $('.nav-logoimg').css("opacity", '0.0');
+                  navbar.css("background-color", "rgba(255, 255, 255, 0.0)");
+                  navbar.css("box-shadow", "0 .5rem 1rem rgba(0, 0, 0, 0.0)");
+                  navbar.css("margin", "10px");
+                  navbar.css("padding", "5px 10px 5px 10px");
+                  navbar.css("border-radius", "25px");
+                  navbar_logo.css("opacity", '0.0');
                 }
               };
             $(document).ready(function(){

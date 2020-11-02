@@ -3,6 +3,10 @@ html, body {
 	height: 100%;
 }
 
+nav * {
+	color: black !important;
+}
+
 #header {
 	padding-top: 1rem;
 }

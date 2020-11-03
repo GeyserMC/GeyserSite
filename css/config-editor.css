@@ -10,6 +10,9 @@ html, body {
 		margin: 0;
 		background-color: rgb(0 0 0 / 15%);
 	}
+	.navbar-toggler {
+		filter: invert(1);
+	}
 }
 
 nav #navbarNav ul li a {

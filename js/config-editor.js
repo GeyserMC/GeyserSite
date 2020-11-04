@@ -228,7 +228,7 @@ function loaderVisible (isVisible) {
   } else {
     headerSubtitle.innerText = 'Please edit the config below'
     loaderSection.style.display = 'none'
-    exportSection.style.display = 'block'
+    exportSection.style.display = 'flex'
     importSection.style.display = 'flex'
   }
 }

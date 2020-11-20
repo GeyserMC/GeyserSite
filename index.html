@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>GeyserMC</title>
         <meta charset="UTF-8" />
@@ -25,7 +25,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-            <div class="navbar-brand"><img class="nav-logoimg" src="img/geyser.png"></div>
+            <div class="navbar-brand"><img class="nav-logoimg" src="img/geyser.png" alt="geyser logo"></div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -60,9 +60,9 @@
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 text-center">
-                            <img class="logoimg" src="img/geyser.png" />
+                            <img class="logoimg" src="img/geyser.png" alt="geyser logo"/>
                             <h1 class="text-center">Revolutionize Your Minecraft Server</h1>
-                            <h4 class="text-center">Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server.</h5>
+                            <h5 class="text-center">Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server.</h5>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                         <p>Geyser is a proxy, bridging the gap between Minecraft: Bedrock Edition and Minecraft: Java Edition servers. The ultimate goal of this project is to allow Minecraft: Bedrock Edition users to join Minecraft: Java Edition servers as seamlessly as possible to allow for true cross-platform.</p>
                     </div>
                     <div class="col">
-                        <div><img src="img/crossplat0.png" /></div>
+                        <div><img src="img/crossplat0.png" alt="image of bedrock client on java edition server"/></div>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                         <p>Geyser is a middleware, which translates all the incoming and outgoing packets. With this being said, Geyser works as a standalone proxy, meaning you can use it to join <i>any</i> modern Minecraft Java server. Geyser can also be installed on your server as a plugin, so you can easily make your server compatible with Minecraft: Bedrock Edition.</p>
                     </div>
                     <div class="col">
-                        <div><img src="img/crossplat1.png" /></div>
+                        <div><img src="img/crossplat1.png" alt="diagram of bedrock edition to geyser to java edition"/></div>
                     </div>
                 </div>
             </div>
@@ -188,7 +188,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script>
-            var gmc_nav_listener = function() {
+            const gmc_nav_listener = function () {
                 let navbar = $(".navbar");
                 let navbar_logo = $('.nav-logoimg');
                 if ($(document).scrollTop() > 225) {

@@ -133,27 +133,31 @@ h1.text-center {
 }
 
 .section5 {
+	background-color: #30ba00;
+}
+
+.section6 {
 	background-color: #212121;
 	padding: 20px;
 	min-width: 400px;
 }
 
-.section5 a:link {
+.section6 a:link {
 	color: #fff !important;
     text-decoration: none;
 }
 
-.section5 a:hover {
+.section6 a:hover {
 	color: #009bcf !important;
     text-decoration: none;
 }
 
-.section5 a:visited {
+.section6 a:visited {
 	color: #fff !important;
     text-decoration: none;
 }
 
-.section5 .card {
+.section6 .card {
 	background-color: #121212;
 	border-radius: 30px;
 	text-align: right;
@@ -162,11 +166,11 @@ h1.text-center {
 	min-height: 150px;
 }
 
-.section5 .card-text {
+.section6 .card-text {
 	font-size: 0.9em;
 }
 
-.section5 .col-sm {
+.section6 .col-sm {
 	padding: 15px;
 }
 
@@ -213,16 +217,16 @@ footer a:hover {
 	margin: auto;
 }
 
-.s5-elements {
+.s6-elements {
 	height: 100%;
     display: inline-block;
 }
 
-.s5-icon {
+.s6-icon {
 	width: 25%;
 	margin-right: 5%;
 }
 
-.s5-details {
+.s6-details {
 	width: 65%;
 }

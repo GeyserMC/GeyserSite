@@ -170,7 +170,7 @@ function generateHTML (config) {
     const prettyKey = configKey === '' ? '&nbsp;' : configKey
     container.innerHTML += `<div class="card-header"><p class="card-header-title">${prettyKey}</p></div>`
 
-    let content = '<div class="card-content">'
+    let content = '<div class="card-body">'
     content += '<div class="content">'
 
     Object.keys(config[configKey]).forEach(configOption => {
@@ -197,20 +197,20 @@ function generateHTML (config) {
 function getInput (name, value) {
   switch (name) {
     case 'remote.auth-type':
-      return `<div class="select"><select id="${name}"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select></div>`
+      return `<select id="${name}" class="form-select"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select>`
 
     case 'config-version':
-      return `<input class="input" type="text" disabled value="${value.replace(/"/g, '')}">`
+      return `<input class="form-control" type="text" disabled value="${value.replace(/"/g, '')}">`
     case 'metrics.uuid':
-      return `<input class="input" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value }">`
+      return `<input class="form-control" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value }">`
 
     default:
       if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') {
-        return `<div class="field"><input class="switch is-thin is-success" type="checkbox" id="${name}" ${value.toLowerCase() === 'true' ? 'checked="checked"' : ''}><label for="${name}"></label></div>`
+        return `<div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="${name}" ${value.toLowerCase() === 'true' ? 'checked="checked"' : ''}><label for="${name}"></label></div>`
       } else if (!isNaN(value)) {
-        return `<input class="input" type="number" value="${value}" id="${name}" >`
+        return `<input class="form-control" type="number" value="${value}" id="${name}" >`
       } else {
-        return `<input class="input" type="text" value="${value.replace(/"/g, '')}" id="${name}" >`
+        return `<input class="form-control" type="text" value="${value.replace(/"/g, '')}" id="${name}" >`
       }
   }
 }
@@ -228,8 +228,8 @@ function loaderVisible (isVisible) {
   } else {
     headerSubtitle.innerText = 'Please edit the config below'
     loaderSection.style.display = 'none'
-    exportSection.style.display = 'flex'
-    importSection.style.display = 'flex'
+    exportSection.style.display = 'inline-flex'
+    importSection.style.display = 'inline-flex'
   }
 }
 

@@ -47,11 +47,14 @@ nav #navbarNav ul li a:hover {
 }
 
 #config-options {
-	padding-top: 0;
+	padding: 1rem 0;
 }
 
 #config-options .container .card {
 	margin-bottom: 1rem;
+}
+#config-options .container .card:last-of-type {
+	margin-bottom: 0;
 }
 
 #config-options h3:first-child {
@@ -93,4 +96,8 @@ nav #navbarNav ul li a:hover {
 
 .row {
 	margin: 0;
+}
+
+#file-load {
+	display: none;
 }

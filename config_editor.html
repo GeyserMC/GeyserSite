@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>GeyserMC: Config Editor</title>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <title>GeyserMC: Config Editor</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="GeyserMC: Config Editor">
+    <meta name="application-name" content="GeyserMC: Config Editor">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://geysermc.org">
+    <meta property="og:title" content="GeyserMC: Config Editor">
+    <meta property="og:description" content="Geyser is a bridge between Minecraft: Bedrock Edition and Minecraft: Java Edition which allows you to join Minecraft Java servers with Bedrock Edition servers to enable true cross-platform.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@geyser_mc">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
@@ -21,10 +34,16 @@
     <link rel="manifest" href="/site.webmanifest?v=JsSFAj">
     <link rel="mask-icon" href="/safari-pinned-tab.svg?v=JsSFAj" color="#009000">
     <link rel="shortcut icon" href="/favicon.ico?v=JsSFAj">
-    <meta name="apple-mobile-web-app-title" content="GeyserMC">
-    <meta name="application-name" content="GeyserMC">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#ffffff">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SP2RW3VG9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-9SP2RW3VG9')
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -36,7 +55,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="http://ci.geysermc.org">
+                    <a href="https://ci.geysermc.org">
                         <button class="btn nav-link">
                             <i class="fas fa-cloud-download-alt"></i>&nbsp;<span>Download</span>
                         </button>
@@ -48,7 +67,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://discord.geysermc.org">
+                    <a class="nav-link" href="https://discord.geysermc.org">
                         <i class="fab fa-discord"></i>&nbsp;<span>Discord</span>
                     </a>
                 </li>

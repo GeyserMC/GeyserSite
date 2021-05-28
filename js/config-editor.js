@@ -198,7 +198,8 @@ function getInput (name, value) {
   switch (name) {
     case 'remote.auth-type':
       return `<div class="select"><select id="${name}"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select></div>`
-
+    case 'show-cooldown':
+      return `<div class="select"><select id="${name}"><option ${value === 'title' ? 'selected' : ''}>title</option><option ${value === 'actionbar' ? 'selected' : ''}>actionbar</option><option ${value === 'false' ? 'selected' : ''}>false</option></select></div>`
     case 'config-version':
       return `<input class="input" type="text" disabled value="${value.replace(/"/g, '')}">`
     case 'metrics.uuid':

@@ -200,6 +200,8 @@ function getInput (name, value) {
       return `<div class="select"><select id="${name}"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select></div>`
     case 'show-cooldown':
       return `<div class="select"><select id="${name}"><option ${value === 'title' ? 'selected' : ''}>title</option><option ${value === 'actionbar' ? 'selected' : ''}>actionbar</option><option ${value === 'false' ? 'selected' : ''}>false</option></select></div>`
+    case 'emote-offhand-workaround':
+      return `<div class="select"><select id="${name}"><option ${value === 'disabled' ? 'selected' : ''}>disabled</option><option ${value === 'no-emotes' ? 'selected' : ''}>no-emotes</option><option ${value === 'emotes-and-offhand' ? 'selected' : ''}>emotes-and-offhand</option></select></div>`
     case 'config-version':
       return `<input class="input" type="text" disabled value="${value.replace(/"/g, '')}">`
     case 'metrics.uuid':

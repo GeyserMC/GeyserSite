@@ -33,7 +33,7 @@ document.querySelector('#export').addEventListener('click', () => {
 
 document.querySelector('#default-load').addEventListener('click', () => {
   loaderVisible(true)
-  window.fetch('https://raw.githubusercontent.com/GeyserMC/Geyser/master/connector/src/main/resources/config.yml').then((res) => {
+  window.fetch('https://raw.githubusercontent.com/GeyserMC/Geyser/master/core/src/main/resources/config.yml').then((res) => {
     return res.text()
   }).then((text) => {
     handleConfigLoad(text)

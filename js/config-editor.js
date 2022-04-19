@@ -129,6 +129,11 @@ function loadConfig (config) {
       return
     }
 
+    // Ignore these lines since they will fail to parse
+    if (!line.includes(':')) {
+      return
+    }
+
     const splitLine = line.split(':')
     splitLine[0] = splitLine[0].trim()
     splitLine[1] = splitLine[1].trim()
@@ -140,7 +145,7 @@ function loadConfig (config) {
     }
 
     // Ignore user auths section
-    if (currentSection === 'userAuths') {
+    if (currentSection === 'userAuths' || currentSection === 'saved-user-logins') {
       return
     }
 

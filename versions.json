@@ -1,8 +1,8 @@
 {
-  "geyser": {
-    "bedrock": {
-      "protocol": 544,
-      "version": "1.19.20"
+  "bedrock": {
+    "protocol": {
+      "id": 544,
+      "name": "1.19.20"
     }
   }
 }

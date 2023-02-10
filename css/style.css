@@ -3,7 +3,7 @@
 }
 
 header {
-	background-image: url(/img/background3.png);
+	background-image: url(/img/background.png);
 	background-position: center top;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -36,4 +36,8 @@ header {
 
 .social-icon:hover {
 	filter: brightness(0.8);
+}
+
+.text-shadow {
+	text-shadow: 1px 1px 5px #000;
 }

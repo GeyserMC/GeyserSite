@@ -1,232 +1,39 @@
-body {
-	color: white;
-	font-family: 'Montserrat', sans-serif;
+:root {
+	--bs-body-font-family: 'Montserrat', sans-serif;
 }
 
-@media screen and (max-width: 768px) {
-	/* fixes some right side empty spaces on mobile */
-	html {
-		width: fit-content;
-		height: fit-content;
-	}
-}
-
-.navbar {
-	margin: 10px;
-	padding: 10px 10px 10px 10px;
-	background-color: rgba(255, 255, 255, 0.0);
-	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.0);
-	transition: all 1.5s ease;
-	border-radius: 25px;
-}
-
-.navbar .btn.nav-link {
-	text-decoration: none;
-	background-color: #fff;
-	border-radius: 50px;
-	color: black;
-}
-
-.navbar .btn.nav-link:hover {
-	text-decoration: none !important;
-	background-color: #009bcf;
-	color: white;
-}
-
-.navbar a:link {
-	color: #fff !important;
-    text-decoration: none;
-    transition: color 0.25s ease;
-}
-
-.navbar a:hover {
-	color: #009bcf !important;
-    text-decoration: none;
-}
-
-.navbar-nav .nav-link {
-    padding: 10px;
-}
-
-.nav-link i span {
-	font-size: 14px;
-}
-
-.nav-logoimg {
-	height: 46px;
-	margin-left: 24px;
-	opacity: 0.0;
-	transition: opacity 1.5s ease;
-}
-
-li.nav-item {
-	margin-right: 10px;
-}
-
-h1.text-center {
-	padding-bottom: 10px;
-	font-weight: bolder;
-}
-
-.card h5 {
-	font-size: 20px;
-	font-weight: bolder;
-}
-
-.section1 {
-	height: 100vh;
-	min-width: 400px;
-	background-image: url('../img/background3.png');
+header {
+	background-image: url(/img/background3.png);
 	background-position: center top;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-.sections .col {
-	padding: 80px 30px 80px 10px;
-}
-.sections img {
-	width: 100%;
+.bg-geyser-primary {
+	background-color: #008ab8;
 }
 
-@media screen and (max-width: 768px) {
-	.sections .col {
-		padding: 20px 20px 20px 20px;
-		width: 100%;
-	}
-	.sections img {
-		width: 95vw;
-	}
+.bg-geyser-secondary {
+	background-color: #248f00;
 }
 
-.section2 {
-	background-color: #212121;
-	min-width: 400px;
+.bg-twitter {
+	background-color: #1da1f2 !important;
 }
 
-.section3 {
-	background-color: #fff;
-	min-width: 400px;
+.bg-discord {
+	background-color: #5865F2 !important;
 }
 
-.section3 .col {
-	color: black;
+.social-icon {
+	display: block;
+	height: 3rem;
+	width: 3rem;
+	line-height: 2.4rem;
+    font-size: 1.5rem;
+	transition: filter .15s ease-in-out;
 }
 
-.section3 .col iframe {
-	-webkit-box-shadow: 4px 3px 13px 3px rgba(0,0,0,0.75);
-	-moz-box-shadow: 4px 3px 13px 3px rgba(0,0,0,0.75);
-	box-shadow: 4px 3px 13px 3px rgba(0,0,0,0.75);
-	border-radius: 2px;
-	max-width: 500px;
-	width: 96vw;
-	height: 282px;
-}
-
-.section4 {
-	background-color: #009bcf;
-	min-width: 400px;
-}
-
-.section4 .col {
-	color: white;
-}
-
-.section5 {
-	background-color: #30ba00;
-}
-
-.section6 {
-	background-color: #212121;
-	padding: 20px;
-	min-width: 400px;
-}
-
-.section6 a:link {
-	color: #fff !important;
-    text-decoration: none;
-}
-
-.section6 a:hover {
-	color: #009bcf !important;
-    text-decoration: none;
-}
-
-.section6 a:visited {
-	color: #fff !important;
-    text-decoration: none;
-}
-
-.section6 .card {
-	background-color: #121212;
-	border-radius: 30px;
-	text-align: right;
-	padding: 25px;
-	min-width: 325px;
-	min-height: 150px;
-}
-
-.section6 .card-text {
-	font-size: 0.9em;
-}
-
-.section6 .col-sm {
-	padding: 15px;
-}
-
-.card i {
-	font-size: 5em;
-	transition: color 0.25s ease;
-}
-
-.card i:hover {
-    color: #009bcf;
-}
-
-footer {
-	background-color: #121212;
-}
-
-footer a {
-	color: #fff;
-}
-
-footer a:hover {
-	color: #009bcf;
-}
-
-.logoimg {
-	width: auto !important;
-}
-
-@media screen and (max-width: 768px) {
-	.section5 .card {
-		padding: 15px;
-		line-height: 1;
-		position: relative;
-		width: 100%;
-		overflow: hidden;
-	}
-	.logoimg {
-		width: 75% !important;
-		height: auto;
-	}
-}
-
-.section5 .container-fluid .row .col-sm .card .no-gutters {
-	margin: auto;
-}
-
-.s6-elements {
-	height: 100%;
-    display: inline-block;
-}
-
-.s6-icon {
-	width: 25%;
-	margin-right: 5%;
-}
-
-.s6-details {
-	width: 65%;
+.social-icon:hover {
+	filter: brightness(0.8);
 }

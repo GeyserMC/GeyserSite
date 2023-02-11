@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ site.title }}{% if page.title %}: {{ page.title }}{% endif %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css" />
+
+	<meta name="author" content="{{ site.title }}" />
+	<meta name="keywords" content="minecraft, bedrock, java, protocol, packet, pe, geyser, bridge, bedrock-edition, java-edition, proxy, java servers on bedrock, java server on phone, minecraft bridge, cross platform, protocol translator, translator, middleware, bedrock on java, minecraft server" />
+	<meta name="description" content="{{ site.description }}" />
+	<meta name="theme-color" content="#2b3035">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="{{ site.url }}">
+	<meta property="og:title" content="{{ site.title }}">
+	<meta property="og:description" content="{{ site.description }}">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@{{ site.twitter_username }}">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#248f00" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+	<header>
+		<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/"><img src="/favicon-32x32.png" alt="geyser logo" height="32"> {{ site.title }}</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarLinks">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" href="https://ci.geysermc.org/"><i class="bi bi-download pe-1"></i> Download</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/GeyserMC/Geyser"><i class="bi bi-github pe-1"></i> Source</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://discord.gg/{{ site.discord_invite }}"><i class="bi bi-discord pe-1"></i> Discord</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://wiki.geysermc.org/"><i class="bi bi-book pe-1"></i> Wiki</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="bi bi-tools pe-1"></i> Utilities
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end">
+							  <li><a class="dropdown-item" href="/utilities/config_editor">Config Editor</a></li>
+							  <li><a class="dropdown-item" href="/utilities/dump_viewer">Dump Viewer</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		{{ content }}
+	</main>
+	<footer class="p-4 text-center">
+		<div class="d-flex gap-3 justify-content-center pb-3">
+			<a class="btn btn-primary rounded-circle border-0 social-icon bg-twitter" href="https://twitter.com/{{ site.twitter_username }}" role="button"><i class="bi bi-twitter"></i></a>
+			<a class="btn btn-primary rounded-circle border-0 social-icon bg-black" href="https://github.com/{{ site.github_username }}" role="button"><i class="bi bi-github"></i></a>
+			<a class="btn btn-primary rounded-circle border-0 social-icon bg-discord" href="https://discord.gg/{{ site.discord_invite }}" role="button"><i class="bi bi-discord"></i></a>
+		</div>
+		&copy; 2023 {{ site.title }}
+	</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>

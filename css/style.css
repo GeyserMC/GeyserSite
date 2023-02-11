@@ -45,7 +45,3 @@ main {
 .social-icon:hover {
 	filter: brightness(0.8);
 }
-
-p {
-	color: white;
-}

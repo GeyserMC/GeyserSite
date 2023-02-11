@@ -1,7 +1,96 @@
 ---
 title: "Dump Viewer"
-subtitle: "See <a href=\"https://github.com/GeyserMC/GeyserSite/pull/26\">GeyserMC/GeyserSite#26</a>"
+subtitle: "See below for the breakdown of the dump"
 ---
 <section class="container">
-	TODO
+    <div id="statusMessage">
+        Loading...
+    </div>
+    <div class="d-none" id="dumpBreakdown">
+        <div class="card mb-2">
+            <div class="card-header">
+                Versions
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <b>Geyser Version</b><br>
+                        <p id="geyserVersion"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <b>Java Version</b><br>
+                        <p id="javaVersion"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <b>Operating System</b><br>
+                        <p id="osVersion"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-2">
+            <div class="card-header">
+                Geyser Version
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <b>Build</b><br>
+                        <a id="buildNumber"></a>
+                    </div>
+                    <div class="col-md-4">
+                        <b>Commit Hash</b><br>
+                        <a id="commit" href="#"></a>
+                    </div>
+                    <div class="col-md-4">
+                        <b>Branch</b><br>
+                        <p id="branch"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-2">
+            <div class="card-header">
+                Platform Info
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <b>Platform Identifier</b><br>
+                        <p id="platformIdentifier"></p>
+                    </div>
+
+                    <div class="col-md-2">
+                        <b>Platform Name</b><br>
+                        <p id="platformName"></p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <b>Platform Version</b><br>
+                        <p id="platformVersion"></p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <b>Platform API Version</b><br>
+                        <p id="platformAPIVersion"></p>
+                    </div>
+
+                    <div class="col-md-2">
+                        <b>Online Mode</b><br>
+                        <p id="onlineMode"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-2">
+            <div class="card-header">
+                Config
+            </div>
+            <div class="card-body">
+                <pre><code id="config"></code></pre>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script src='/js/dump-viewer.js'></script>

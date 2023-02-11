@@ -35,7 +35,7 @@
   </head>
   <body>
 	<header>
-		<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary {% if page.fixed_navbar %}fixed-top{% endif %}">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/"><img src="/favicon-32x32.png" alt="geyser logo" height="32"> {{ site.title }}</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">

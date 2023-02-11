@@ -1,33 +1,27 @@
 ---
 title: "Config Editor"
+subtitle: "Please choose the config to import"
 ---
 <link rel="stylesheet" href="/css/config-editor.css" />
-<section class="container pb-2">
-    <h1>
-        {{ page.title }}
-    </h1>
-    <p id="status">
-        Please choose the config to import
-    </p>
-    <div id="loader-section">
-        <button class="button is-loading">Loading</button>
-    </div>
-    <div class="d-flex">
-        <div class="align-items-center" id="export-section">
-            <button class="btn btn-primary" id="export">
-                <i class="bi bi-file-earmark-arrow-down"></i> Export
-            </button>
-            <span>&nbsp;or&nbsp;</span>
-        </div>
-        <div class="align-items-center" id="import-section">
-            <button class="btn btn-primary" id="default-load">
-                <i class="bi bi-sliders"></i> Default
-            </button>
-            <span>&nbsp;or&nbsp;</span>
-            <button class="btn btn-primary">
-                <input type="file" id="file-load" accept=".yml">
-                <i class="bi bi-file-earmark-arrow-up"></i> Upload
-            </button>
+<section class="mb-2">
+    <div class="container">
+        <div class="d-flex">
+            <div class="align-items-center" id="export-section">
+                <button class="btn btn-primary" id="export">
+                    <i class="bi bi-file-earmark-arrow-down"></i> Export
+                </button>
+                <span>&nbsp;or&nbsp;</span>
+            </div>
+            <div class="align-items-center" id="import-section">
+                <button class="btn btn-primary" id="default-load">
+                    <i class="bi bi-sliders"></i> Default
+                </button>
+                <span>&nbsp;or&nbsp;</span>
+                <button class="btn btn-primary">
+                    <input type="file" id="file-load" accept=".yml">
+                    <i class="bi bi-file-earmark-arrow-up"></i> Upload
+                </button>
+            </div>
         </div>
     </div>
 </section>

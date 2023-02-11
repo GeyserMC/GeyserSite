@@ -12,15 +12,17 @@ main {
 	flex-grow: 1;
 }
 
-.home-header {
+.header {
 	background-image: url(/img/background.png);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+
+	text-shadow: 1px 1px 5px #000;
 }
 
 main > section:first-of-type:not(.home-header) {
-	margin-top: 4rem;
+	margin-top: 60px; /* Need to find a more accurate way of getting this */
 }
 
 .bg-geyser-primary {
@@ -50,8 +52,4 @@ main > section:first-of-type:not(.home-header) {
 
 .social-icon:hover {
 	filter: brightness(0.8);
-}
-
-.text-shadow {
-	text-shadow: 1px 1px 5px #000;
 }

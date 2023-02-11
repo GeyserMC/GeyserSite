@@ -45,3 +45,12 @@ main {
 .social-icon:hover {
 	filter: brightness(0.8);
 }
+
+p {
+	color: white !important;
+}
+
+#subtitle {
+	color: white;
+	padding-left: 5px;
+}

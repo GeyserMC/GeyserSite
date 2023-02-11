@@ -13,12 +13,17 @@ main {
 }
 
 .header {
+	padding: 10px 0 10px 0;
 	background-image: url(/img/background.png);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 
 	text-shadow: 1px 1px 5px #000;
+}
+
+.container {
+	padding-top: 20px;
 }
 
 .bg-geyser-primary {

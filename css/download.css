@@ -1,0 +1,14 @@
+section .nav-tabs .nav-link {
+    color: white !important;
+}
+.tab-content {
+    font-size: 16px;
+}
+
+.row {
+    padding: 10px;
+}
+
+.col-sm .setup p {
+    white-space: pre-line;
+}

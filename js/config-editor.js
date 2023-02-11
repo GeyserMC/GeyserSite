@@ -222,18 +222,15 @@ function getInput (name, value) {
 }
 
 function loaderVisible (isVisible) {
-  const headerSubtitle = document.querySelector('#status')
-  const loaderSection = document.querySelector('#loader-section')
+  const headerSubtitle = document.querySelector('#subtitle')
   const exportSection = document.querySelector('#export-section')
   const importSection = document.querySelector('#import-section')
   if (isVisible) {
     headerSubtitle.innerText = 'Loading...'
-    loaderSection.style.display = 'block'
     exportSection.style.display = 'none'
     importSection.style.display = 'none'
   } else {
     headerSubtitle.innerText = 'Please edit the config below'
-    loaderSection.style.display = 'none'
     exportSection.style.display = 'flex'
     importSection.style.display = 'flex'
   }

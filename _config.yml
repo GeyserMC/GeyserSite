@@ -1,1 +1,22 @@
+
+# General site settings
+title: GeyserMC
+description: >-
+  Geyser is a bridge between Minecraft: Bedrock Edition and Minecraft: Java Edition
+  which allows you to join Minecraft Java servers with Bedrock Edition servers to enable true cross-platform.
+baseurl: ""
+url: "https://geysermc.org"
+twitter_username: geyser_mc
+github_username: GeyserMC
+discord_invite: geysermc
+
+# Front Matter Defaults
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+
 include: [".well-known"]

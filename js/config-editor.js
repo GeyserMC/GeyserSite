@@ -173,10 +173,9 @@ function generateHTML (config) {
     container.className = 'card'
     container.innerHTML = ''
     const prettyKey = configKey === '' ? '&nbsp;' : configKey
-    container.innerHTML += `<div class="card-header"><p class="card-header-title">${prettyKey}</p></div>`
+    container.innerHTML += `<div class="card-header">${prettyKey}</div>`
 
-    let content = '<div class="card-content">'
-    content += '<div class="content">'
+    let content = '<div class="card-body">'
 
     Object.keys(config[configKey]).forEach(configOption => {
       const configOptionInfo = config[configKey][configOption]
@@ -188,7 +187,6 @@ function generateHTML (config) {
       content += getInput(configOptionKey, configOptionInfo.value)
     })
 
-    content += '</div>'
     content += '</div>'
 
     container.innerHTML += content
@@ -202,29 +200,29 @@ function generateHTML (config) {
 function getInput (name, value) {
   switch (name) {
     case 'remote.auth-type':
-      return `<div class="select"><select id="${name}"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select></div>`
+      return `<select class="form-select" id="${name}"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select>`
     case 'show-cooldown':
-      return `<div class="select"><select id="${name}"><option ${value === 'title' ? 'selected' : ''}>title</option><option ${value === 'actionbar' ? 'selected' : ''}>actionbar</option><option ${value === 'false' ? 'selected' : ''}>false</option></select></div>`
+      return `<select class="form-select" id="${name}"><option ${value === 'title' ? 'selected' : ''}>title</option><option ${value === 'actionbar' ? 'selected' : ''}>actionbar</option><option ${value === 'false' ? 'selected' : ''}>false</option></select>`
     case 'emote-offhand-workaround':
-      return `<div class="select"><select id="${name}"><option ${value === 'disabled' ? 'selected' : ''}>disabled</option><option ${value === 'no-emotes' ? 'selected' : ''}>no-emotes</option><option ${value === 'emotes-and-offhand' ? 'selected' : ''}>emotes-and-offhand</option></select></div>`
+      return `<select class="form-select" id="${name}"><option ${value === 'disabled' ? 'selected' : ''}>disabled</option><option ${value === 'no-emotes' ? 'selected' : ''}>no-emotes</option><option ${value === 'emotes-and-offhand' ? 'selected' : ''}>emotes-and-offhand</option></select>`
     case 'config-version':
-      return `<input class="input" type="text" disabled value="${value.replace(/"/g, '')}">`
+      return `<input class="form-control" type="text" disabled value="${value.replace(/"/g, '')}">`
     case 'metrics.uuid':
-      return `<input class="input" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value }">`
+      return `<input class="form-control" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value }">`
 
     default:
       if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') {
-        return `<div class="field"><input class="switch is-thin is-success" type="checkbox" id="${name}" ${value.toLowerCase() === 'true' ? 'checked="checked"' : ''}><label for="${name}"></label></div>`
+        return `<div class="form-check form-switch form-control-lg"><input class="form-check-input" type="checkbox" role="switch" id="${name}" ${value.toLowerCase() === 'true' ? 'checked="checked"' : ''}><label for="${name}"></label></div>`
       } else if (!isNaN(value)) {
-        return `<input class="input" type="number" value="${value}" id="${name}" >`
+        return `<input class="form-control" type="number" value="${value}" id="${name}" >`
       } else {
-        return `<input class="input" type="text" value="${value.replace(/"/g, '')}" id="${name}" >`
+        return `<input class="form-control" type="text" value="${value.replace(/"/g, '')}" id="${name}" >`
       }
   }
 }
 
 function loaderVisible (isVisible) {
-  const headerSubtitle = document.querySelector('p[class="subtitle"]')
+  const headerSubtitle = document.querySelector('#status')
   const loaderSection = document.querySelector('#loader-section')
   const exportSection = document.querySelector('#export-section')
   const importSection = document.querySelector('#import-section')

@@ -1,119 +1,49 @@
-<!doctype html>
-<html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="utf-8">
-	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>GeyserMC</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css" />
-
-	<meta name="author" content="GeyserMC" />
-	<meta name="keywords" content="minecraft, bedrock, java, protocol, packet, pe, geyser, bridge, bedrock-edition, java-edition, proxy, java servers on bedrock, java server on phone, minecraft bridge, cross platform, protocol translator, translator, middleware, bedrock on java, minecraft server" />
-	<meta name="description" content="Geyser is a bridge between Minecraft: Bedrock Edition and Minecraft: Java Edition which allows you to join Minecraft Java servers with Bedrock Edition servers to enable true cross-platform." />
-	<meta name="theme-color" content="#2b3035">
-
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://geysermc.org">
-	<meta property="og:title" content="GeyserMC">
-	<meta property="og:description" content="Geyser is a bridge between Minecraft: Bedrock Edition and Minecraft: Java Edition which allows you to join Minecraft Java servers with Bedrock Edition servers to enable true cross-platform.">
-
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@geyser_mc">
-
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#248f00">
-	<link rel="shortcut icon" href="/favicon.ico">
-  </head>
-  <body>
-    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><img src="/favicon-32x32.png" alt="geyser logo" height="32"> GeyserMC</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarLinks">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active" href="https://ci.geysermc.org/"><i class="bi bi-download pe-1"></i> Download</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="https://github.com/GeyserMC/Geyser"><i class="bi bi-github pe-1"></i> Source</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="https://discord.gg/geysermc"><i class="bi bi-discord pe-1"></i> Discord</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="https://wiki.geysermc.org/"><i class="bi bi-book pe-1"></i> Wiki</a>
-					</li>
-				</ul>
+---
+---
+<section class="home-header">
+	<div class="container vh-100 text-center d-flex align-items-center justify-content-center">
+		<div class="mw-100">
+			<img class="mw-100" src="/img/geyser.png" alt="geyser logo">
+			<h1 class="fw-bold text-shadow">Revolutionize Your Minecraft Server</h1>
+			<h4 class="text-shadow">Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server.</h4>
+		</div>
+	</div>
+</section>
+<section class="container py-5">
+	<div class="row">
+		<div class="col-6 d-flex align-items-center">
+			<div>
+				<h2>What is Geyser?</h2>
+				<p>Geyser is a proxy, bridging the gap between Minecraft: Bedrock Edition and Minecraft: Java Edition servers. The ultimate goal of this project is to allow Minecraft: Bedrock Edition users to join Minecraft: Java Edition servers as seamlessly as possible to allow for true cross-platform.</p>
 			</div>
 		</div>
-	</nav>
-	<header>
-		<div class="container vh-100 text-center d-flex align-items-center justify-content-center">
-			<div class="mw-100">
-				<img class="mw-100" src="/img/geyser.png" alt="geyser logo">
-				<h1 class="fw-bold text-shadow">Revolutionize Your Minecraft Server</h1>
-				<h4 class="text-shadow">Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server.</h4>
-			</div>
+		<div class="col-6 d-flex align-items-center">
+			<img class="w-100" src="/img/crossplat0.png" alt="image of bedrock client on java edition server">
 		</div>
-	</header>
-	<main>
-		<div class="container py-5">
-			<div class="row">
-				<div class="col-6 d-flex align-items-center">
-					<div>
-						<h2>What is Geyser?</h2>
-						<p>Geyser is a proxy, bridging the gap between Minecraft: Bedrock Edition and Minecraft: Java Edition servers. The ultimate goal of this project is to allow Minecraft: Bedrock Edition users to join Minecraft: Java Edition servers as seamlessly as possible to allow for true cross-platform.</p>
-					</div>
-				</div>
-				<div class="col-6 d-flex align-items-center">
-					<img class="w-100" src="/img/crossplat0.png" alt="image of bedrock client on java edition server">
+	</div>
+</section>
+<section class="bg-geyser-primary">
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-6 d-flex align-items-center">
+				<img class="w-100" src="/img/crossplat1.png" alt="diagram of bedrock edition to geyser to java edition">
+			</div>
+			<div class="col-6 d-flex align-items-center">
+				<div>
+					<h2>How does it work?</h2>
+					<p>Geyser is a middleware, which translates all the incoming and outgoing packets. With this being said, Geyser works as a standalone proxy, meaning you can use it to join <i>any</i> modern Minecraft Java server. Geyser can also be installed on your server as a plugin, so you can easily make your server compatible with Minecraft: Bedrock Edition.</p>
 				</div>
 			</div>
 		</div>
-		<div class="bg-geyser-primary">
-			<div class="container py-5">
-				<div class="row">
-					<div class="col-6 d-flex align-items-center">
-						<img class="w-100" src="/img/crossplat1.png" alt="diagram of bedrock edition to geyser to java edition">
-					</div>
-					<div class="col-6 d-flex align-items-center">
-						<div>
-							<h2>How does it work?</h2>
-							<p>Geyser is a middleware, which translates all the incoming and outgoing packets. With this being said, Geyser works as a standalone proxy, meaning you can use it to join <i>any</i> modern Minecraft Java server. Geyser can also be installed on your server as a plugin, so you can easily make your server compatible with Minecraft: Bedrock Edition.</p>
-						</div>
-					</div>
-				</div>
+	</div>
+</section>
+<section class="bg-geyser-secondary">
+	<div class="container py-5">
+		<div class="row">
+			<div class="col">
+				<h2>Join from anywhere</h2>
+				<p>Geyser can be joined from Windows 10, iOS, Android, and even consoles (see <a href="https://wiki.geysermc.org/geyser/using-geyser-with-consoles/">here</a> for how to set this up!) Geyser is tested working with a <a href="https://wiki.geysermc.org/geyser/supported-hosting-providers/">wide array of hosting providers</a>, and, if you own the server, you aren't limited by a Java account with our <a href="https://github.com/GeyserMC/Floodgate/">Floodgate</a> plugin!</p>
 			</div>
 		</div>
-		<div class="bg-geyser-secondary">
-			<div class="container py-5">
-				<div class="row">
-					<div class="col">
-						<h2>Join from anywhere</h2>
-						<p>Geyser can be joined from Windows 10, iOS, Android, and even consoles (see <a href="https://wiki.geysermc.org/geyser/using-geyser-with-consoles/">here</a> for how to set this up!) Geyser is tested working with a <a href="https://wiki.geysermc.org/geyser/supported-hosting-providers/">wide array of hosting providers</a>, and, if you own the server, you aren't limited by a Java account with our <a href="https://github.com/GeyserMC/Floodgate/">Floodgate</a> plugin!</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-	<footer class="p-4 text-center">
-		<div class="d-flex gap-3 justify-content-center pb-3">
-			<a class="btn btn-primary rounded-circle border-0 social-icon bg-twitter" href="#" role="button"><i class="bi bi-twitter"></i></a>
-			<a class="btn btn-primary rounded-circle border-0 social-icon bg-black" href="#" role="button"><i class="bi bi-github"></i></a>
-			<a class="btn btn-primary rounded-circle border-0 social-icon bg-discord" href="#" role="button"><i class="bi bi-discord"></i></a>
-		</div>
-		&copy; 2023 GeyserMC
-	</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  </body>
-</html>
+	</div>
+</section>

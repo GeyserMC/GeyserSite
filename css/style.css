@@ -2,11 +2,25 @@
 	--bs-body-font-family: 'Montserrat', sans-serif;
 }
 
-header {
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex-grow: 1;
+}
+
+.home-header {
 	background-image: url(/img/background.png);
-	background-position: center top;
+	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+main > section:first-of-type:not(.home-header) {
+	margin-top: 4rem;
 }
 
 .bg-geyser-primary {

@@ -39,9 +39,16 @@
 	opacity: 1;
 }
 
+#file-load-container {
+	position: relative;
+    overflow: hidden;
+}
+
 #file-load {
 	opacity: 0;
     right: 0;
     top: 0;
     position: absolute;
+    width: 100%;
+    height: 100%;
 }

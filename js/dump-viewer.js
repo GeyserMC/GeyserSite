@@ -1,44 +1,69 @@
-let id = window.location.href.split('?').pop()
+let id = window.location.href.includes('?') ? window.location.href.split('?').pop() : ''
 if (id === '' || id === undefined) {
   id = window.location.hash.slice(1)
 }
 
-const url = 'https://dump.geysermc.org/raw/' + id
+const inputForm = document.querySelector('#inputForm')
+const statusMessage = document.querySelector('#statusMessage')
+const dumpBreakdown = document.querySelector('#dumpBreakdown')
+const inputId = document.querySelector('#inputId')
 
-function capitalizeFirstLetter (string) {
-  return string.charAt(0).toUpperCase() + string.slice(1)
+inputId.value = id ?? ''
+
+document.querySelector('#btnLoad').addEventListener('click', () => {
+  inputForm.classList.add('d-none')
+  statusMessage.classList.remove('d-none')
+  loadDump(inputId.value)
+})
+
+// If the ID is still empty give the user a form
+if (id === '' || id === undefined) {
+  inputForm.classList.remove('d-none')
+  statusMessage.classList.add('d-none')
+} else {
+  loadDump(id)
 }
 
-fetch(url).then((response) => response.json()).then((data) => {
-  // Check for error
-  if (data.message) {
-    throw new Error(data.message)
+function loadDump (id) {
+  const url = 'https://dump.geysermc.org/raw/' + id
+
+  function capitalizeFirstLetter (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
-  // Versions
-  document.querySelector('#geyserVersion').textContent = data.versionInfo.version
-  document.querySelector('#javaVersion').textContent = data.versionInfo.javaVersion + ' (' + data.versionInfo.architecture + ')'
-  document.querySelector('#osVersion').textContent = data.versionInfo.operatingSystem + ' ' + data.versionInfo.operatingSystemVersion
+  fetch(url).then((response) => response.json()).then((data) => {
+    // Check for error
+    if (data.message) {
+      throw new Error(data.message)
+    }
 
-  // Geyser Versions
-  document.querySelector('#buildNumber').textContent = data.gitInfo.buildNumber
-  document.querySelector('#buildNumber').href = 'https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/' + data.gitInfo.buildNumber + '/'
-  document.querySelector('#commit').textContent = data.gitInfo['git.commit.id.abbrev']
-  document.querySelector('#commit').href = 'https://github.com/GeyserMC/Geyser/commit/' + data.gitInfo['git.commit.id']
-  document.querySelector('#branch').textContent = data.gitInfo['git.branch']
+    // Versions
+    document.querySelector('#geyserVersion').textContent = data.versionInfo.version
+    document.querySelector('#javaVersion').textContent = data.versionInfo.javaVersion + ' (' + data.versionInfo.architecture + ')'
+    document.querySelector('#osVersion').textContent = data.versionInfo.operatingSystem + ' ' + data.versionInfo.operatingSystemVersion
 
-  // Config
-  document.querySelector('#config').textContent = JSON.stringify(data.config, null, 2)
+    // Geyser Versions
+    document.querySelector('#buildNumber').textContent = data.gitInfo.buildNumber
+    document.querySelector('#buildNumber').href = 'https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/' + data.gitInfo.buildNumber + '/'
+    document.querySelector('#commit').textContent = data.gitInfo['git.commit.id.abbrev']
+    document.querySelector('#commit').href = 'https://github.com/GeyserMC/Geyser/commit/' + data.gitInfo['git.commit.id']
+    document.querySelector('#branch').textContent = data.gitInfo['git.branch']
 
-  // Platform Info
-  document.querySelector('#platformIdentifier').textContent = data.bootstrapInfo.platform
-  document.querySelector('#platformName').textContent = data.bootstrapInfo.platformName ?? capitalizeFirstLetter(data.bootstrapInfo.platform.toLowerCase())
-  document.querySelector('#platformVersion').textContent = data.bootstrapInfo.platformVersion ?? 'N/A'
-  document.querySelector('#platformAPIVersion').textContent = data.bootstrapInfo.platformAPIVersion ?? 'N/A'
-  document.querySelector('#onlineMode').textContent = data.bootstrapInfo.onlineMode ?? 'N/A'
+    // Config
+    document.querySelector('#config').textContent = JSON.stringify(data.config, null, 2)
 
-  document.querySelector('#dumpBreakdown').classList.remove('d-none')
-  document.querySelector('#statusMessage').classList.add('d-none')
-}).catch((error) => {
-  document.querySelector('#statusMessage').innerHTML = 'An error occurred while loading the dump. Please try again later.<br><br>' + error
-})
+    // Platform Info
+    document.querySelector('#platformIdentifier').textContent = data.bootstrapInfo.platform
+    document.querySelector('#platformName').textContent = data.bootstrapInfo.platformName ?? capitalizeFirstLetter(data.bootstrapInfo.platform.toLowerCase())
+    document.querySelector('#platformVersion').textContent = data.bootstrapInfo.platformVersion ?? 'N/A'
+    document.querySelector('#platformAPIVersion').textContent = data.bootstrapInfo.platformAPIVersion ?? 'N/A'
+    document.querySelector('#onlineMode').textContent = data.bootstrapInfo.onlineMode ?? 'N/A'
+
+    dumpBreakdown.classList.remove('d-none')
+    statusMessage.classList.add('d-none')
+    inputForm.classList.add('d-none')
+  }).catch((error) => {
+    statusMessage.innerHTML = 'An error occurred while loading the dump. Please try again later.<br><br>' + error
+    inputForm.classList.remove('d-none')
+  })
+}

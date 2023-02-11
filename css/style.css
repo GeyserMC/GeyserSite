@@ -47,10 +47,5 @@ main {
 }
 
 p {
-	color: white !important;
-}
-
-#subtitle {
 	color: white;
-	padding-left: 5px;
 }

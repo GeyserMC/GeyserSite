@@ -21,10 +21,6 @@ main {
 	text-shadow: 1px 1px 5px #000;
 }
 
-main > section:first-of-type:not(.home-header) {
-	margin-top: 60px; /* Need to find a more accurate way of getting this */
-}
-
 .bg-geyser-primary {
 	background-color: #008ab8;
 }

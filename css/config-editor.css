@@ -1,18 +1,5 @@
-#loader-section, #export-section {
+#export-section {
 	display: none;
-}
-
-#loader-section button.is-loading {
-    border-color: transparent;
-    font-size: 2em;
-}
-
-#config-options {
-	padding-top: 0;
-}
-
-#config-options .container .card {
-	margin-bottom: 1rem;
 }
 
 #config-options h3:first-child {

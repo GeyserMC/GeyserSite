@@ -170,7 +170,7 @@ function generateHTML (config) {
 
   Object.keys(config).forEach(configKey => {
     const container = document.createElement('div')
-    container.className = 'card'
+    container.className = 'card mb-2'
     container.innerHTML = ''
     const prettyKey = configKey === '' ? '&nbsp;' : configKey
     container.innerHTML += `<div class="card-header">${prettyKey}</div>`

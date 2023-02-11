@@ -208,7 +208,7 @@ function getInput (name, value) {
     case 'config-version':
       return `<input class="form-control" type="text" disabled value="${value.replace(/"/g, '')}">`
     case 'metrics.uuid':
-      return `<input class="form-control" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value }">`
+      return `<input class="form-control" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value}">`
 
     default:
       if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') {
@@ -239,8 +239,8 @@ function loaderVisible (isVisible) {
 // From https://stackoverflow.com/a/873856/5299903
 function createUUID () {
   // http://www.ietf.org/rfc/rfc4122.txt
-  const s = [];
-  const hexDigits = '0123456789abcdef';
+  const s = []
+  const hexDigits = '0123456789abcdef'
   for (let i = 0; i < 36; i++) {
     s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1)
   }

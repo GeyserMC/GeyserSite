@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        {{ include.info }}
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="setup">
+                <h4>Setup Instructions:</h4>
+                <p>{{ include.setup }}</p>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="d-grid gap-2">
+                <a href="https://download.geysermc.org/v2/projects/geyser/versions/{{ site.geyser_version }}/builds/latest/downloads/{{ include.platform }}" class="btn btn-lg btn-success" type="button">
+                    <i class="bi bi-download pe-1"></i> Download
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -28,9 +28,11 @@ document.querySelector('#export').addEventListener('click', () => {
     newConfig = newConfig.replace(replaceOld, replaceNew)
   })
 
+  // Trigger a download of the final config
   downloadString(newConfig, 'text/plain', 'config.yml')
 })
 
+// Load the default config
 document.querySelector('#default-load').addEventListener('click', () => {
   loaderVisible(true)
   window.fetch('https://raw.githubusercontent.com/GeyserMC/Geyser/master/core/src/main/resources/config.yml').then((res) => {
@@ -40,6 +42,7 @@ document.querySelector('#default-load').addEventListener('click', () => {
   })
 })
 
+// Load the config from a file
 document.querySelector('#file-load').addEventListener('change', (e) => {
   configFromFile(e.srcElement.files[0])
 })
@@ -58,11 +61,11 @@ function preventDefaults (e) {
   e.stopPropagation()
 }
 
-;['dragenter', 'dragover'].forEach(eventName => {
+['dragenter', 'dragover'].forEach(eventName => {
   dropArea.addEventListener(eventName, highlight)
 })
 
-;['dragleave', 'drop'].forEach(eventName => {
+['dragleave', 'drop'].forEach(eventName => {
   dropArea.addEventListener(eventName, unhighlight)
 })
 
@@ -86,13 +89,16 @@ dropArea.addEventListener('drop', (e) => {
 // #endregion Drag and Drop
 
 function configFromFile (fileName) {
+  // Makse sure the file is a .yml file
   if (!fileName.name.endsWith('.yml')) {
     window.alert('Please select a .yml config file!')
     return
   }
 
+  // Show the loader
   loaderVisible(true)
 
+  // Read the file
   const fileReader = new FileReader()
   fileReader.onload = (e) => {
     handleConfigLoad(e.target.result)
@@ -101,9 +107,14 @@ function configFromFile (fileName) {
 }
 
 function handleConfigLoad (config) {
+  // Save the config into the window and parse
   window.config = config
   window.parsedConfig = loadConfig(config)
+
+  // Generate the HTML for the config options
   generateHTML(window.parsedConfig)
+
+  // Hide the loader
   loaderVisible(false)
 }
 
@@ -114,16 +125,21 @@ function loadConfig (config) {
 
   const newConfig = {}
 
+  // Parse each line of the config
   lines.forEach(line => {
+    // Reset the section if we are no indented
     if (!line.startsWith('  ')) {
       currentSection = ''
     }
 
+    // Ignore any empty lines
     line = line.trim()
     if (line === '') {
       currentComment = ''
       return
     }
+
+    // Check if we are in a comment
     if (line.startsWith('#')) {
       currentComment += line.replace(/^# ?/i, '') + '<br>'
       return
@@ -134,10 +150,12 @@ function loadConfig (config) {
       return
     }
 
+    // Get the key and value
     const splitLine = line.split(':')
     splitLine[0] = splitLine[0].trim()
     splitLine[1] = splitLine[1].trim()
 
+    // Check if we are in a new section
     if (line.endsWith(':')) {
       currentSection = splitLine[0]
       currentComment = ''
@@ -149,12 +167,14 @@ function loadConfig (config) {
       return
     }
 
+    // Add the config option to the config object
     newConfig[currentSection] = newConfig[currentSection] || {}
     newConfig[currentSection][splitLine[0]] = {
       desc: currentComment,
       value: splitLine[1]
     }
 
+    // Reset the comment
     currentComment = ''
   })
 
@@ -162,13 +182,17 @@ function loadConfig (config) {
 }
 
 function generateHTML (config) {
+  // Clear the current HTML
   const configOptions = document.querySelector('#config-options')
   configOptions.innerHTML = ''
 
+  // Create the root element
   const configOptionsContainer = document.createElement('div')
   configOptionsContainer.className = 'container'
 
+  // Loop through each section
   Object.keys(config).forEach(configKey => {
+    // Setup the section header
     const container = document.createElement('div')
     container.className = 'card mb-2'
     container.innerHTML = ''
@@ -177,28 +201,35 @@ function generateHTML (config) {
 
     let content = '<div class="card-body">'
 
+    // Loop through each config option
     Object.keys(config[configKey]).forEach(configOption => {
+      // Get the config option info
       const configOptionInfo = config[configKey][configOption]
+
+      // Build the HTML for the config option
       content += `<h3>${configOption}</h3>`
       content += `<p>${configOptionInfo.desc}</p>`
 
+      // Get the input type for the config option
       const configOptionKey = configKey === '' ? configOption : `${configKey}.${configOption}`
-
       content += getInput(configOptionKey, configOptionInfo.value)
     })
 
+    // Close off the section
     content += '</div>'
 
+    // Add the section to the root element
     container.innerHTML += content
-
     configOptionsContainer.appendChild(container)
   })
 
+  // Add the new HTML to the page
   configOptions.appendChild(configOptionsContainer)
 }
 
 function getInput (name, value) {
   switch (name) {
+    // Handle all the dropdowns
     case 'remote.auth-type':
       return `<select class="form-select" id="${name}"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select>`
     case 'show-cooldown':
@@ -211,20 +242,22 @@ function getInput (name, value) {
       return `<input class="form-control" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value}">`
 
     default:
-      if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') {
+      // Handle all the other inputs
+      if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') { // Boolean
         return `<div class="form-check form-switch form-control-lg"><input class="form-check-input" type="checkbox" role="switch" id="${name}" ${value.toLowerCase() === 'true' ? 'checked="checked"' : ''}><label for="${name}"></label></div>`
-      } else if (!isNaN(value)) {
+      } else if (!isNaN(value)) { // Number
         return `<input class="form-control" type="number" value="${value}" id="${name}" >`
-      } else {
+      } else { // String
         return `<input class="form-control" type="text" value="${value.replace(/"/g, '')}" id="${name}" >`
       }
   }
 }
 
+const headerSubtitle = document.querySelector('#subtitle')
+const exportSection = document.querySelector('#export-section')
+const importSection = document.querySelector('#import-section')
+
 function loaderVisible (isVisible) {
-  const headerSubtitle = document.querySelector('#subtitle')
-  const exportSection = document.querySelector('#export-section')
-  const importSection = document.querySelector('#import-section')
   if (isVisible) {
     headerSubtitle.innerText = 'Loading...'
     exportSection.style.display = 'none'

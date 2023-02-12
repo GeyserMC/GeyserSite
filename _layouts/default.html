@@ -25,14 +25,15 @@
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@{{ site.twitter_username }}">
-
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-	<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#248f00" />
+	
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+	<link rel='apple-touch-icon' href='/apple-touch-icon.png'>
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#248f00" />
   </head>
   <body>
 	<header>
@@ -74,7 +75,7 @@
 		{{ content }}
 	</main>
 	<footer class="p-4 text-center bg-body-tertiary">
-		&copy; 2023 {{ site.title }}
+		&copy; {{ 'now' | date: "%Y" }} {{ site.title }}
 	</footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>

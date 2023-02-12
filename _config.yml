@@ -11,10 +11,11 @@ github_username: GeyserMC
 discord_invite: geysermc
 
 geyser_version: 2.1.0
+floodgate_version: 2.1.0
 
 descriptions:
   spigot:
-    info: If you run a Paper or Spigot server without a proxy (i.e. Velocity or BungeeCord) in front of it, this is the version to install.
+    info: If you run a Paper or Spigot server without a proxy (i.e. Velocity) in front of it, this is the version to install.
     setup: |
       1. Download Geyser using the download button.
       2. Stop your server (if it is running) and place Geyser in the plugins folder.

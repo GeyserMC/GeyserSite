@@ -1,12 +1,10 @@
 section .nav-tabs .nav-link {
-    color: white !important;
-}
-.tab-content {
-    font-size: 16px;
+    color: var(--bs-white) !important;
 }
 
-.row {
-    padding: 10px;
+section .nav-tabs .nav-link img {
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .col-sm .setup p {

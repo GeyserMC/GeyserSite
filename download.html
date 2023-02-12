@@ -7,26 +7,26 @@ subtitle: "Choose which platform to download Geyser for"
     <div class="download-tabs">
         <ul class="nav nav-tabs" id="download" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="spigot-tab" data-bs-toggle="tab" data-bs-target="#spigot" type="button" role="tab" aria-controls="spigot" aria-selected="true"><img src="img/icons/paper.png" width="24px" height="24px" alt=""/> Paper / Spigot</button>
+                <button class="nav-link active" id="spigot-tab" data-bs-toggle="tab" data-bs-target="#spigot" type="button" role="tab" aria-controls="spigot" aria-selected="true"><img src="img/icons/paper.png" alt=""/> Paper / Spigot</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="velocity-tab" data-bs-toggle="tab" data-bs-target="#velocity" type="button" role="tab" aria-controls="profile" aria-selected="false"><img src="img/icons/velocity.svg" width="24px" height="24px" alt=""/> Velocity</button>
+                <button class="nav-link" id="velocity-tab" data-bs-toggle="tab" data-bs-target="#velocity" type="button" role="tab" aria-controls="profile" aria-selected="false"><img src="img/icons/velocity.svg" alt=""/> Velocity</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="bungeecord-tab" data-bs-toggle="tab" data-bs-target="#bungeecord" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="img/icons/waterfall.svg" width="24px" height="24px" alt=""/> Waterfall / BungeeCord</button>
+                <button class="nav-link" id="bungeecord-tab" data-bs-toggle="tab" data-bs-target="#bungeecord" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="img/icons/waterfall.svg" alt=""/> Waterfall / BungeeCord</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="fabric-tab" data-bs-toggle="tab" data-bs-target="#fabric" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="img/icons/fabric.png" width="24px" height="24px" alt=""/> Fabric</button>
+                <button class="nav-link" id="fabric-tab" data-bs-toggle="tab" data-bs-target="#fabric" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="img/icons/fabric.png" alt=""/> Fabric</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="sponge-tab" data-bs-toggle="tab" data-bs-target="#sponge" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="img/icons/sponge.png" width="24px" height="24px" style="padding: 2px;" alt=""/> Sponge</button>
+                <button class="nav-link" id="sponge-tab" data-bs-toggle="tab" data-bs-target="#sponge" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="img/icons/sponge.png" style="padding: 2px;" alt=""/> Sponge</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="standalone-tab" data-bs-toggle="tab" data-bs-target="#standalone" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="img/icons/geyser.png" width="24px" height="24px" alt=""/> Standalone</button>
+                <button class="nav-link" id="standalone-tab" data-bs-toggle="tab" data-bs-target="#standalone" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="img/icons/geyser.png"alt=""/> Standalone</button>
             </li>
         </ul>
     </div>
-    <div class="tab-content" id="downloadContent">
+    <div class="tab-content fs-6" id="downloadContent">
         <div class="tab-pane fade show active" id="spigot" role="tabpanel" aria-labelledby="spigot-tab">
             {% capture info %}{{ site.descriptions["spigot"].info }}{% endcapture %}
             {% capture setup %}{{ site.descriptions["spigot"].setup }}{% endcapture %}

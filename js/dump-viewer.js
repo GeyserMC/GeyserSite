@@ -1,3 +1,4 @@
+// Get the ID from the URL
 let id = window.location.href.includes('?') ? window.location.href.split('?').pop() : ''
 if (id === '' || id === undefined) {
   id = window.location.hash.slice(1)
@@ -13,7 +14,14 @@ inputId.value = id ?? ''
 document.querySelector('#btnLoad').addEventListener('click', () => {
   inputForm.classList.add('d-none')
   statusMessage.classList.remove('d-none')
-  loadDump(inputId.value)
+
+  // Get the ID from the input
+  let id = inputId.value
+  if (id.startsWith('https://dump.geysermc.org/')) {
+    id = id.split('/').pop()
+  }
+
+  loadDump(id)
 })
 
 // If the ID is still empty give the user a form
@@ -24,12 +32,13 @@ if (id === '' || id === undefined) {
   loadDump(id)
 }
 
-function loadDump (id) {
-  const url = 'https://dump.geysermc.org/raw/' + id
+function capitalizeFirstLetter (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
 
-  function capitalizeFirstLetter (string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
+function loadDump (id) {
+  // Construct the raw dump URL
+  const url = 'https://dump.geysermc.org/raw/' + id
 
   fetch(url).then((response) => response.json()).then((data) => {
     // Check for error
@@ -43,7 +52,7 @@ function loadDump (id) {
     document.querySelector('#osVersion').textContent = data.versionInfo.operatingSystem + ' ' + data.versionInfo.operatingSystemVersion
 
     // Geyser Versions
-    document.querySelector('#buildNumber').textContent = data.gitInfo.buildNumber
+    document.querySelector('#buildNumber').textContent = data.gitInfo['git.build.number'] ?? data.gitInfo.buildNumber
     document.querySelector('#buildNumber').href = 'https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/' + data.gitInfo.buildNumber + '/'
     document.querySelector('#commit').textContent = data.gitInfo['git.commit.id.abbrev']
     document.querySelector('#commit').href = 'https://github.com/GeyserMC/Geyser/commit/' + data.gitInfo['git.commit.id']

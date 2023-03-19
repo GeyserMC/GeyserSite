@@ -38,6 +38,7 @@ descriptions:
       3. Start up your server and Geyser should be installed.
 
       Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/#bungeecordvelocity-setup">proxy setup</a> page on the wiki for more information.
+    floodgate_id: bungee
   fabric:
     info: If you run a Fabric server without a proxy (i.e. Velocity) in front of it, this is the version to install.
     setup: |

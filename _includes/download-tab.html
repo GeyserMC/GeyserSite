@@ -15,22 +15,24 @@
                     <i class="bi bi-download pe-1"></i> Download Geyser
                 </a>
             </div>
-            <div class="d-grid gap-2 py-3">
-                <h5>Want to securely allow Bedrock users who don't own Java Edition?</h5>
-                <p>By using our Floodgate plugin, you can allow Xbox Live authenticated Bedrock clients to securely join your online-mode server without needing a Java Edition account.</p>
-                {% if include.platform != "standalone" %}
-                    <p>Install our Floodgate plugin by clicking the button below:</p>
-                    <a class="btn btn-lg btn-primary" href="https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/{{ include.platform }}">
-                        <i class="bi bi-download pe-1"></i> Download Floodgate
-                    </a>
-                    <p>For more information, see our Floodgate setup page <a href="https://wiki.geysermc.org/floodgate/setup/">here</a>!</p>
-                {% else %}
-                    <p>With Geyser standalone, Floodgate will only work if you run the server Geyser is being used on. See the setup instructions below for more information.</p>
-                    <a class="btn btn-lg btn-primary" href="https://wiki.geysermc.org/floodgate/setup/#setting-up">
-                        <i class="bi bi-journals pe-1"></i> Floodgate Setup
-                    </a>
-                {% endif %}
-            </div>
+            {% if include.platform != "sponge" %}
+                <div class="d-grid gap-2 py-3">
+                    <h5>Want to securely allow Bedrock users who don't own Java Edition?</h5>
+                    <p>By using our Floodgate plugin, you can allow Xbox Live authenticated Bedrock clients to securely join your online-mode server without needing a Java Edition account.</p>
+                    {% if include.platform != "standalone" %}
+                        <p>Install our Floodgate plugin by clicking the button below:</p>
+                        <a class="btn btn-lg btn-primary" href="https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/{% if include.floodgate_id %}{{ include.floodgate_id }}{% else %}{{ include.platform }}{% endif %}">
+                            <i class="bi bi-download pe-1"></i> Download Floodgate
+                        </a>
+                        <p>For more information, see our Floodgate setup page <a href="https://wiki.geysermc.org/floodgate/setup/">here</a>!</p>
+                    {% else %}
+                        <p>With Geyser standalone, Floodgate will only work if you run the server Geyser is being used on. See the setup instructions below for more information.</p>
+                        <a class="btn btn-lg btn-primary" href="https://wiki.geysermc.org/floodgate/setup/#setting-up">
+                            <i class="bi bi-journals pe-1"></i> Floodgate Setup
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>

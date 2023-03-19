@@ -61,11 +61,11 @@ function preventDefaults (e) {
   e.stopPropagation()
 }
 
-['dragenter', 'dragover'].forEach(eventName => {
+;['dragenter', 'dragover'].forEach(eventName => {
   dropArea.addEventListener(eventName, highlight)
 })
 
-['dragleave', 'drop'].forEach(eventName => {
+;['dragleave', 'drop'].forEach(eventName => {
   dropArea.addEventListener(eventName, unhighlight)
 })
 

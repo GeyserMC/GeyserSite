@@ -21,6 +21,7 @@ document.querySelector('#btnLoad').addEventListener('click', () => {
     id = id.split('/').pop()
   }
 
+  window.location.hash = '#' + id
   loadDump(id)
 })
 

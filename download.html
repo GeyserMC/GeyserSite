@@ -67,3 +67,20 @@ subtitle: "Choose which platform to download Geyser or Floodgate for."
         </div>
     </div>
 </section>
+
+<script>
+    window.addEventListener('load', () => {
+        var hash = location.hash.replace(/^#/, ''); // Remove the # from the hash
+        if (hash) {
+            const tab = document.querySelector('.nav-tabs button[data-bs-target="#' + hash + '"]')
+            if (tab) {
+                bootstrap.Tab.getOrCreateInstance(tab).show()
+            }
+        } 
+
+        // Change hash for page-reload
+        document.querySelectorAll('.nav-tabs button').forEach((element) => element.addEventListener('shown.bs.tab', (e) => {
+            window.location.hash = e.target.dataset.bsTarget;
+        }))
+    })
+</script>

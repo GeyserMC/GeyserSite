@@ -21,7 +21,11 @@
                     <p>By using our Floodgate plugin, you can allow Xbox Live authenticated Bedrock clients to securely join your online-mode server without needing a Java Edition account.</p>
                     {% if include.platform != "standalone" %}
                         <p>Install our Floodgate plugin by clicking the button below:</p>
-                        <a class="btn btn-lg btn-primary btn-floodgate-download" href="https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/{% if include.floodgate_id %}{{ include.floodgate_id }}{% else %}{{ include.platform }}{% endif %}">
+                        {% if include.floodgate_url %}
+                            <a class="btn btn-lg btn-primary btn-floodgate-alt-download" href="{{ include.floodgate_url }}">
+                        {% else %}
+                            <a class="btn btn-lg btn-primary btn-floodgate-download" href="https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/{% if include.floodgate_id %}{{ include.floodgate_id }}{% else %}{{ include.platform }}{% endif %}">
+                        {% endif %}
                             <i class="bi bi-download pe-1"></i> Download Floodgate
                         </a>
                         <p>For more information, see our Floodgate setup page <a href="https://wiki.geysermc.org/floodgate/setup/">here</a>!</p>

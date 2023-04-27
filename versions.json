@@ -1,7 +1,7 @@
 {
   "bedrock": {
     "protocol": {
-      "id": 582
+      "id": 582,
       "name": "1.19.80"
     }
   }

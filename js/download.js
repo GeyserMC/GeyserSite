@@ -1,7 +1,7 @@
 /* global location bootstrap fetch */
 
 window.addEventListener('load', () => {
-  const hash = location.hash.replace(/^#/, '') // Remove the # from the hash
+  const hash = location.hash.replace(/^#/, '').toLowerCase() // Remove the # from the hash
   if (hash) {
     const tab = document.querySelector('.nav-tabs button[data-bs-target="#' + hash + '"]')
     if (tab) {

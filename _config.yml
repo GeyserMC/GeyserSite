@@ -10,9 +10,6 @@ twitter_username: geyser_mc
 github_username: GeyserMC
 discord_invite: geysermc
 
-geyser_version: 2.1.1
-floodgate_version: 2.2.2
-
 descriptions:
   spigot:
     info: If you run a Paper or Spigot server without a proxy (i.e. Velocity) in front of it, this is the version to install.

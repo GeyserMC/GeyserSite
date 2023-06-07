@@ -10,8 +10,8 @@ twitter_username: geyser_mc
 github_username: GeyserMC
 discord_invite: geysermc
 
-geyser_version: 2.1.0
-floodgate_version: 2.1.0
+geyser_version: 2.1.1
+floodgate_version: 2.2.2
 
 descriptions:
   spigot:

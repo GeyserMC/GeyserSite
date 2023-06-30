@@ -63,7 +63,7 @@ function loadDump (id) {
     document.querySelector('#config').textContent = JSON.stringify(data.config, null, 2)
 
     // Platform Info
-    document.querySelector('#platformIdentifier').textContent = data.bootstrapInfo.platform
+    document.querySelector('#platformIdentifier').textContent = data.bootstrapInfo.platform.platformName || data.bootstrapInfo.platform
     document.querySelector('#platformName').textContent = data.bootstrapInfo.platformName ?? capitalizeFirstLetter(data.bootstrapInfo.platform.toLowerCase())
     document.querySelector('#platformVersion').textContent = data.bootstrapInfo.platformVersion ?? 'N/A'
     document.querySelector('#platformAPIVersion').textContent = data.bootstrapInfo.platformAPIVersion ?? 'N/A'

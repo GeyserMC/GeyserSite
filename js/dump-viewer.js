@@ -54,7 +54,6 @@ function loadDump (id) {
 
     // Geyser Versions
     document.querySelector('#buildNumber').textContent = data.gitInfo['git.build.number'] ?? data.gitInfo.buildNumber
-    document.querySelector('#buildNumber').href = 'https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/' + data.gitInfo.buildNumber + '/'
     document.querySelector('#commit').textContent = data.gitInfo['git.commit.id.abbrev']
     document.querySelector('#commit').href = 'https://github.com/GeyserMC/Geyser/commit/' + data.gitInfo['git.commit.id']
     document.querySelector('#branch').textContent = data.gitInfo['git.branch']

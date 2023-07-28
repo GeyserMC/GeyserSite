@@ -61,7 +61,7 @@ descriptions:
       4. In the newly created config.yml, open it up and set the remote address to the Java server you want to join.
       5. Re-run Geyser again, and upon joining you should be routed to your Java Edition server!
 
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/standalone/">standalone setup</a> page on the wiki for more information.
+      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">standalone setup</a> page on the wiki for more information.
 
 # Front Matter Defaults
 defaults:

@@ -25,8 +25,6 @@ if (otherModal) {
     const downloadButtons = otherModal.querySelector('#otherModalDownloadBtns')
     downloadButtons.innerHTML = ''
 
-    downloadKey = 'geyser'
-
     const processDownloadData = (data) => {
       const releaseDate = new Date(data.time)
       const downloadsCount = Object.keys(data.downloads).length
@@ -66,6 +64,9 @@ if (otherModal) {
       fetch(`https://download.geysermc.org/v2/projects/${downloadKey}/versions/latest/builds/latest`).then((response) => response.json()).then((data) => {
         window.otherDownloadsCache[downloadKey] = data
         processDownloadData(data)
+      }).catch(() => {
+        placeholder.style.display = 'none'
+        downloadButtons.innerHTML = '<div class="alert alert-danger mb-0" role="alert">Failed to load downloads</div>'
       })
     }
   })

@@ -46,3 +46,11 @@ main {
 .social-icon:hover {
 	filter: brightness(0.8);
 }
+
+.h-100 {
+	height: 100%;
+}
+
+.fs-small {
+	font-size: 0.8rem;
+}

@@ -63,6 +63,37 @@ descriptions:
 
       Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">standalone setup</a> page on the wiki for more information.
 
+
+other_downloads:
+  geyserconnect:
+    title: GeyserConnect
+    info: GeyserConnect is an easy way for Bedrock Edition clients to connect to any Java Edition servers without having to run anything.
+    setup: |
+      1. Download Geyser-Standalone
+      2. Drop the `GeyserConnect.jar` into the `extensions` folder
+      3. Run Geyser-Standalone
+  hydraulic:
+    title: Hydraulic
+    tags: [ "beta" ]
+    info: "A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers."
+    setup: |
+      1. Drop the `Geyser-Fabric/Forge.jar` into the `mods` folder
+      2. Drop the `Hydraulic.jar` into the `mods` folder
+      3. Run the server
+  geyseroptionalpack:
+    title: GeyserOptionalPack
+    info: Optional Bedrock resource pack to extend Geyser functionality
+    setup: |
+      1. Download GeyserOptionalPack
+      2. Drop it into the `packs` folder
+      3. Start the server
+  hurricane:
+    title: Hurricane
+    info: Fixes for Bedrock players involving server behavior modification
+    setup: |
+      1. Download and drop into the `plugins` folder
+      2. Start the server
+
 # Front Matter Defaults
 defaults:
   -

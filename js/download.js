@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
   fetch(`https://download.geysermc.org/v2/projects/${project}/versions/latest/builds/latest`).then((response) => response.json()).then((data) => {
     const releaseDate = new Date(data.time)
     document.querySelectorAll(`.btn-${project}-download`).forEach((element) => {
-      element.innerHTML += `<br><span style="font-size: .8rem;">Build #${data.build} &bull; ${releaseDate.toLocaleDateString()}</span>`
+      element.innerHTML += `<br><span class="fs-small">Build #${data.build} &bull; ${releaseDate.toLocaleDateString()}</span>`
     })
   })
 })

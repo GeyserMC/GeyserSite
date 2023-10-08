@@ -25,6 +25,9 @@ subtitle: "Choose which platform to download Geyser or Floodgate for."
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="standalone-tab" data-bs-toggle="tab" data-bs-target="#standalone" type="button" role="tab" aria-controls="standalone" aria-selected="false"><img src="img/icons/geyser.png" alt="geyser icon"> Standalone</button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other" type="button" role="tab" aria-controls="other" aria-selected="false"><img style="width: 0;" aria-hidden="true"/><!-- This img has to be here because the tabs look strange without --><i class="bi bi-terminal-plus"></i> Other Projects</button>
+            </li>
         </ul>
     </div>
     <div class="tab-content fs-6" id="downloadContent">
@@ -65,6 +68,9 @@ subtitle: "Choose which platform to download Geyser or Floodgate for."
             {% capture setup %}{{ site.descriptions["standalone"].setup }}{% endcapture %}
             {% capture platform %}{{ "standalone" }}{% endcapture %}
             {% include download-tab.html info=info setup=setup platform=platform %}
+        </div>
+        <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+            {% include other-downloads-tab.html %}
         </div>
     </div>
 </section>

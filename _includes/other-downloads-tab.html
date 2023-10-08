@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        {% for downloadEntry in site.other_downloads %} {% assign downloadKey = downloadEntry[0] %} {% assign download = downloadEntry[1] %}
+        <div class="col-sm-6 col-lg-3 py-2">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title d-flex align-items-center">{{ download.title }}{% for tag in download.tags %}<span class="badge fs-small bg-secondary ms-1">{{ tag }}</span>{% endfor %}</h5>
+                    <p class="card-text">{{ download.info }}</p>
+                </div>
+                <div class="card-footer d-grid">
+                    <button class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#otherModal" data-bs-download="{{ downloadKey }}">Information</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="modal fade" id="otherModal" tabindex="-1" aria-labelledby="otherModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="otherModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="otherModalInfo"></p>
+                <h4>Setup Instructions:</h4>
+                <p id="otherModalSetup"></p>
+                <h4>Downloads:</h4>
+                <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                </p>
+                <div class="d-grid gap-2" id="otherModalDownloadBtns"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.otherDownloads = {{ site.other_downloads | jsonify }}
+</script>
+<script src="/js/other-downloads.js"></script>

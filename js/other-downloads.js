@@ -7,7 +7,7 @@ if (otherModal) {
   otherModal.addEventListener('show.bs.modal', (event) => {
     const button = event.relatedTarget
 
-    let downloadKey = button.getAttribute('data-bs-download')
+    const downloadKey = button.getAttribute('data-bs-download')
     const download = window.otherDownloads[downloadKey]
 
     const title = otherModal.querySelector('#otherModalLabel')

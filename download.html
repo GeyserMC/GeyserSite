@@ -20,9 +20,6 @@ subtitle: "Choose which platform to download Geyser or Floodgate for."
                 <button class="nav-link" id="fabric-tab" data-bs-toggle="tab" data-bs-target="#fabric" type="button" role="tab" aria-controls="fabric" aria-selected="false"><img src="img/icons/fabric.png" alt="fabric icon"> Fabric</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="sponge-tab" data-bs-toggle="tab" data-bs-target="#sponge" type="button" role="tab" aria-controls="sponge" aria-selected="false"><img src="img/icons/sponge.png" style="padding: 2px;" alt="sponge icon"> Sponge</button>
-            </li>
-            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="standalone-tab" data-bs-toggle="tab" data-bs-target="#standalone" type="button" role="tab" aria-controls="standalone" aria-selected="false"><img src="img/icons/geyser.png" alt="geyser icon"> Standalone</button>
             </li>
         </ul>
@@ -53,12 +50,6 @@ subtitle: "Choose which platform to download Geyser or Floodgate for."
             {% capture floodgate_url %}https://ci.opencollab.dev/job/GeyserMC/job/Floodgate-Fabric/job/master/{% endcapture %}
             {% capture platform %}{{ "fabric" }}{% endcapture %}
             {% include download-tab.html info=info setup=setup floodgate_url=floodgate_url platform=platform %}
-        </div>
-        <div class="tab-pane fade" id="sponge" role="tabpanel" aria-labelledby="sponge-tab">
-            {% capture info %}{{ site.descriptions["sponge"].info }}{% endcapture %}
-            {% capture setup %}{{ site.descriptions["sponge"].setup }}{% endcapture %}
-            {% capture platform %}{{ "sponge" }}{% endcapture %}
-            {% include download-tab.html info=info setup=setup platform=platform %}
         </div>
         <div class="tab-pane fade" id="standalone" role="tabpanel" aria-labelledby="standalone-tab">
             {% capture info %}{{ site.descriptions["standalone"].info }}{% endcapture %}

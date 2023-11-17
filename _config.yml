@@ -18,7 +18,7 @@ descriptions:
       2. Stop your server (if it is running) and place Geyser in the plugins folder.
       3. Start up your server and Geyser should be installed.
       
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/#plugin-setup">plugin setup</a> page on the wiki for more information.
+      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
   velocity:
     info: Velocity is a proxy that sits in front of multiple servers. If you are running a network with Velocity, this is the version to install.
     setup: |
@@ -26,7 +26,7 @@ descriptions:
       2. Stop your server (if it is running) and place Geyser in the plugins folder.
       3. Start up your server and Geyser should be installed.
   
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/#bungeecordvelocity-setup">proxy setup</a> page on the wiki for more information.
+      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
   bungeecord:
     info: Waterfall / BungeeCord is a proxy that sits in front of multiple servers. If you are running a network with Waterfall or BungeeCord, this is the version to install.
     setup: |
@@ -34,7 +34,7 @@ descriptions:
       2. Stop your server (if it is running) and place Geyser in the plugins folder.
       3. Start up your server and Geyser should be installed.
 
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/#bungeecordvelocity-setup">proxy setup</a> page on the wiki for more information.
+      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
     floodgate_id: bungee
   fabric:
     info: If you run a Fabric server without a proxy (i.e. Velocity) in front of it, this is the version to install.
@@ -43,15 +43,7 @@ descriptions:
       2. Stop your server (if it is running) and place Geyser in the mods folder.
       3. Start up your server and Geyser should be installed.
 
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/#plugin-setup">plugin setup</a> page on the wiki for more information.
-  sponge:
-    info: If you run a Sponge server without a proxy (i.e. Velocity) in front of it, this is the version to install.
-    setup: |
-      1. Download Geyser using the download button.
-      2. Stop your server (if it is running) and place Geyser in the mods folder.
-      3. Start up your server and Geyser should be installed.
-
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/#plugin-setup">plugin setup</a> page on the wiki for more information.
+      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
   standalone:
     info: In instances where you do not own the Minecraft server you want to join, or just want to run a separate Geyser setup from your main server, standalone allows you to run Geyser independently from everything else and you can use it to connect to any server.
     setup: |
@@ -61,7 +53,7 @@ descriptions:
       4. In the newly created config.yml, open it up and set the remote address to the Java server you want to join.
       5. Re-run Geyser again, and upon joining you should be routed to your Java Edition server!
 
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">standalone setup</a> page on the wiki for more information.
+      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
 
 # Front Matter Defaults
 defaults:

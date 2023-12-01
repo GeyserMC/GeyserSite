@@ -47,7 +47,7 @@ subtitle: "Choose which platform to download Geyser or Floodgate for."
         <div class="tab-pane fade" id="fabric" role="tabpanel" aria-labelledby="fabric-tab">
             {% capture info %}{{ site.descriptions["fabric"].info }}{% endcapture %}
             {% capture setup %}{{ site.descriptions["fabric"].setup }}{% endcapture %}
-            {% capture floodgate_url %}https://ci.opencollab.dev/job/GeyserMC/job/Floodgate-Fabric/job/master/{% endcapture %}
+            {% capture floodgate_url %}https://modrinth.com/mod/floodgate/{% endcapture %}
             {% capture platform %}{{ "fabric" }}{% endcapture %}
             {% include download-tab.html info=info setup=setup floodgate_url=floodgate_url platform=platform %}
         </div>

@@ -18,7 +18,7 @@
             <div class="d-grid gap-2 py-3">
                 <h5>Want to securely allow Bedrock users who don't own Java Edition?</h5>
                 <p>By using our Floodgate plugin, you can allow Xbox Live authenticated Bedrock clients to securely join your online-mode server without needing a Java Edition account.</p>
-                {% if include.platform != "standalone" %}
+                {% if include.platform != "standalone" and include.platform != "viaproxy" %}
                     <p>Install our Floodgate plugin by clicking the button below:</p>
                     {% if include.floodgate_url %}
                         <a class="btn btn-lg btn-primary btn-floodgate-alt-download" href="{{ include.floodgate_url }}">
@@ -29,7 +29,11 @@
                     </a>
                     <p>For more information, see our Floodgate setup page <a href="https://wiki.geysermc.org/floodgate/setup/">here</a>!</p>
                 {% else %}
-                    <p>With Geyser standalone, Floodgate will only work if you run the server Geyser is being used on. See the setup instructions below for more information.</p>
+                    {% if include.platform == "viaproxy" %}
+                        <p>With Geyser for ViaProxy, Floodgate will only work if you run the server Geyser is being used on. See the setup instructions below for more information.</p>
+                    {% else %}
+                        <p>With Geyser standalone, Floodgate will only work if you run the server Geyser is being used on. See the setup instructions below for more information.</p>
+                    {% endif %}
                     <a class="btn btn-lg btn-primary" href="https://wiki.geysermc.org/floodgate/setup/#setting-up">
                         <i class="bi bi-journals pe-1"></i> Floodgate Setup
                     </a>

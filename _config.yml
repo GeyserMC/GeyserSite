@@ -44,6 +44,14 @@ descriptions:
       3. Start up your server and Geyser should be installed.
 
       Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
+  viaproxy:
+    info: In instances where you do not own the Minecraft server you want to join, or just want to run a separate Geyser setup from your main server, ViaProxy allows you to run Geyser independently from everything else and you can use it to connect to any server.
+    setup: |
+      1. Download Geyser using the download button.
+      2. Stop ViaProxy (if it is running) and place Geyser in the plugins folder.
+      3. Start up ViaProxy and Geyser should be installed.
+
+      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
   standalone:
     info: In instances where you do not own the Minecraft server you want to join, or just want to run a separate Geyser setup from your main server, standalone allows you to run Geyser independently from everything else and you can use it to connect to any server.
     setup: |

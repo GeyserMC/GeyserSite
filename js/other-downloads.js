@@ -17,7 +17,16 @@ if (otherModal) {
     info.textContent = download.info
 
     const setup = otherModal.querySelector('#otherModalSetup')
-    setup.textContent = download.info
+    if (download.setup_url) {
+      otherModal.querySelector('#otherModalSetupTitle').style.display = 'none'
+      setup.innerHTML = `
+        <a class="btn btn-block btn-info" href="${download.setup_url}">
+          <i class="bi bi-book pe-1"></i> Setup instructions
+        </a>`
+    } else {
+      otherModal.querySelector('#otherModalSetupTitle').style.display = 'block'
+      setup.textContent = download.setup
+    }
 
     const placeholder = otherModal.querySelector('.placeholder-glow')
     placeholder.style.display = 'block'

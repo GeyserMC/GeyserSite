@@ -17,7 +17,7 @@
 </div>
 
 <div class="modal fade" id="otherModal" tabindex="-1" aria-labelledby="otherModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="otherModalLabel"></h5>
@@ -40,7 +40,23 @@
     </div>
 </div>
 
+{% comment %}
+Convert the other downloads into a JS object
+We cant use the built in jsonify filter because it doesn't format markdown
+{% endcomment %}
 <script>
-    window.otherDownloads = {{ site.other_downloads | jsonify }}
+    window.otherDownloads = {
+        {% for other_download in site.other_downloads %}
+            "{{ other_download[0] }}": {
+                {% for download_data in other_download[1] %}
+                    {% if download_data[0] == "info" or download_data[0] == "setup" %}
+                        "{{ download_data[0] }}": {{ download_data[1] | markdownify | jsonify }},
+                    {% else %}
+                        "{{ download_data[0] }}": {{ download_data[1] | jsonify }},
+                    {% endif %}
+                {% endfor %}
+            },
+        {% endfor %}
+    }
 </script>
 <script src="/js/other-downloads.js"></script>

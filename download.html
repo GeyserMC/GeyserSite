@@ -1,78 +1,60 @@
 ---
 title: "Download"
-subtitle: "Choose which platform to download Geyser or Floodgate for."
+subtitle: "Download the latest versions of our various projects."
 ---
 <link rel="stylesheet" href="/css/download.css">
 
 <section class="container">
     <div class="download-tabs">
         <ul class="nav nav-tabs" id="download" role="tablist">
+            {% for downloadEntry in site.downloads %} {% assign downloadKey = downloadEntry[0] %} {% assign download = downloadEntry[1] %}
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="spigot-tab" data-bs-toggle="tab" data-bs-target="#spigot" type="button" role="tab" aria-controls="spigot" aria-selected="true"><img src="img/icons/paper.png" alt="paper icon"> Paper / Spigot</button>
+                <button class="nav-link {% if forloop.first %}active{% endif %}" id="{{ downloadKey }}-tab" data-bs-toggle="tab" data-bs-target="#{{ downloadKey }}" type="button" role="tab" aria-controls="{{ downloadKey }}" aria-selected="true">{{ download.title }}</button>
             </li>
+            {% endfor %}
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="velocity-tab" data-bs-toggle="tab" data-bs-target="#velocity" type="button" role="tab" aria-controls="velocity" aria-selected="false"><img src="img/icons/velocity.svg" alt="velocity icon"> Velocity</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="bungeecord-tab" data-bs-toggle="tab" data-bs-target="#bungeecord" type="button" role="tab" aria-controls="bungeecord" aria-selected="false"><img src="img/icons/waterfall.svg" alt="waterfall icon"> Waterfall / BungeeCord</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="fabric-tab" data-bs-toggle="tab" data-bs-target="#fabric" type="button" role="tab" aria-controls="fabric" aria-selected="false"><img src="img/icons/fabric.png" alt="fabric icon"> Fabric</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="sponge-tab" data-bs-toggle="tab" data-bs-target="#sponge" type="button" role="tab" aria-controls="sponge" aria-selected="false"><img src="img/icons/sponge.png" style="padding: 2px;" alt="sponge icon"> Sponge</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="standalone-tab" data-bs-toggle="tab" data-bs-target="#standalone" type="button" role="tab" aria-controls="standalone" aria-selected="false"><img src="img/icons/geyser.png" alt="geyser icon"> Standalone</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other" type="button" role="tab" aria-controls="other" aria-selected="false"><img style="width: 0;" aria-hidden="true"/><!-- This img has to be here because the tabs look strange without --><i class="bi bi-terminal-plus"></i> Other Projects</button>
+                <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other" type="button" role="tab" aria-controls="other" aria-selected="false">Other Projects</button>
             </li>
         </ul>
     </div>
     <div class="tab-content fs-6" id="downloadContent">
-        <div class="tab-pane fade show active" id="spigot" role="tabpanel" aria-labelledby="spigot-tab">
-            {% capture info %}{{ site.descriptions["spigot"].info }}{% endcapture %}
-            {% capture setup %}{{ site.descriptions["spigot"].setup }}{% endcapture %}
-            {% capture platform %}{{ "spigot" }}{% endcapture %}
-            {% include download-tab.html info=info setup=setup platform=platform %}
+        {% for downloadEntry in site.downloads %} {% assign downloadKey = downloadEntry[0] %} {% assign download = downloadEntry[1] %}
+        <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="{{ downloadKey }}" role="tabpanel" aria-labelledby="{{ downloadKey }}-tab">
+            <p>{{ download.info | markdownify }}</p>
+            {% if download.setup_url %}
+                <p>
+                    <a class="btn btn-block btn-info" href="{{ download.setup_url }}">
+                        <i class="bi bi-book pe-1"></i> Setup instructions
+                    </a>
+                </p>
+            {% else %}
+                <h4>Setup Instructions:</h4>
+                <p>{{ download.setup | markdownify }}</p>
+            {% endif %}
+            <div class="row" id="{{ downloadKey }}BuildsSection">
+                <div class="col-md-6">
+                    <h4>Downloads:</h4>
+                    <div class="build-info"></div>
+                    <div class="row download-buttons"></div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Recent Changelog:</h4>
+                    <div class="commit-log"></div>
+                </div>
+            </div>
+            <div id="{{ downloadKey }}StatusSection">
+                <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                </p>
+            </div>
         </div>
-        <div class="tab-pane fade" id="velocity" role="tabpanel" aria-labelledby="velocity-tab">
-            {% capture info %}{{ site.descriptions["velocity"].info }}{% endcapture %}
-            {% capture setup %}{{ site.descriptions["velocity"].setup }}{% endcapture %}
-            {% capture platform %}{{ "velocity" }}{% endcapture %}
-            {% include download-tab.html info=info setup=setup platform=platform %}
-        </div>
-        <div class="tab-pane fade" id="bungeecord" role="tabpanel" aria-labelledby="bungeecord-tab">
-            {% capture info %}{{ site.descriptions["bungeecord"].info }}{% endcapture %}
-            {% capture setup %}{{ site.descriptions["bungeecord"].setup }}{% endcapture %}
-            {% capture floodgate_id %}{{ site.descriptions["bungeecord"].floodgate_id }}{% endcapture %}
-            {% capture platform %}{{ "bungeecord" }}{% endcapture %}
-            {% include download-tab.html info=info setup=setup floodgate_id=floodgate_id platform=platform %}
-        </div>
-        <div class="tab-pane fade" id="fabric" role="tabpanel" aria-labelledby="fabric-tab">
-            {% capture info %}{{ site.descriptions["fabric"].info }}{% endcapture %}
-            {% capture setup %}{{ site.descriptions["fabric"].setup }}{% endcapture %}
-            {% capture floodgate_url %}https://ci.opencollab.dev/job/GeyserMC/job/Floodgate-Fabric/job/master/{% endcapture %}
-            {% capture platform %}{{ "fabric" }}{% endcapture %}
-            {% include download-tab.html info=info setup=setup floodgate_url=floodgate_url platform=platform %}
-        </div>
-        <div class="tab-pane fade" id="sponge" role="tabpanel" aria-labelledby="sponge-tab">
-            {% capture info %}{{ site.descriptions["sponge"].info }}{% endcapture %}
-            {% capture setup %}{{ site.descriptions["sponge"].setup }}{% endcapture %}
-            {% capture platform %}{{ "sponge" }}{% endcapture %}
-            {% include download-tab.html info=info setup=setup platform=platform %}
-        </div>
-        <div class="tab-pane fade" id="standalone" role="tabpanel" aria-labelledby="standalone-tab">
-            {% capture info %}{{ site.descriptions["standalone"].info }}{% endcapture %}
-            {% capture setup %}{{ site.descriptions["standalone"].setup }}{% endcapture %}
-            {% capture platform %}{{ "standalone" }}{% endcapture %}
-            {% include download-tab.html info=info setup=setup platform=platform %}
-        </div>
+        {% endfor %}
         <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
             {% include other-downloads-tab.html %}
         </div>
     </div>
 </section>
-
+<script>
+    window.platformIcons = {{ site.platform_icons | jsonify }}
+</script>
 <script src='/js/download.js'></script>

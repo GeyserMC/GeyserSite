@@ -1,4 +1,4 @@
-/* global fetch */
+/* global fetch processDownloadData */
 
 window.otherDownloadsCache = {}
 
@@ -14,7 +14,7 @@ if (otherModal) {
     title.textContent = download.title
 
     const info = otherModal.querySelector('#otherModalInfo')
-    info.textContent = download.info
+    info.innerHTML = download.info
 
     const setup = otherModal.querySelector('#otherModalSetup')
     if (download.setup_url) {
@@ -25,7 +25,7 @@ if (otherModal) {
         </a>`
     } else {
       otherModal.querySelector('#otherModalSetupTitle').style.display = 'block'
-      setup.textContent = download.setup
+      setup.innerHTML = download.setup
     }
 
     const placeholder = otherModal.querySelector('.placeholder-glow')
@@ -44,7 +44,7 @@ if (otherModal) {
       }
 
       for (const platformId in data.downloads) {
-        let title = download.title
+        let title = data.project_name
 
         // If there are multiple downloads, use the name of the download
         if (downloadsCount > 1) {
@@ -52,7 +52,7 @@ if (otherModal) {
         }
 
         downloadButtons.innerHTML += `
-          <a class="btn btn-block btn-success" href="https://download.geysermc.org/v2/projects/${downloadKey}/versions/latest/builds/latest/downloads/${platformId}">
+          <a class="btn btn-block btn-success" href="https://download.geysermc.org/v2/projects/${data.project_id}/versions/latest/builds/latest/downloads/${platformId}">
             <i class="bi bi-download pe-1"></i> Download ${title}`
 
         // Add the build number and release date if there is only one download
@@ -71,8 +71,8 @@ if (otherModal) {
       processDownloadData(window.otherDownloadsCache[downloadKey])
     } else {
       fetch(`https://download.geysermc.org/v2/projects/${downloadKey}/versions/latest/builds/latest`).then((response) => response.json()).then((data) => {
-        window.otherDownloadsCache[downloadKey] = data
         processDownloadData(data)
+        window.otherDownloadsCache[downloadKey] = data // Store to cache after to prevent caching errors
       }).catch(() => {
         placeholder.style.display = 'none'
         downloadButtons.innerHTML = '<div class="alert alert-danger mb-0" role="alert">Failed to load downloads</div>'

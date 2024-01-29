@@ -66,11 +66,15 @@ function loadBuilds (target) {
     buildInfo.innerHTML = `<span>Build #${latestBuild.build} &bull; ${releaseDate.toLocaleDateString()}</span>`
 
     for (const platformId in latestBuild.downloads) {
-      const title = platformId.charAt(0).toUpperCase() + platformId.slice(1)
+      let title = platformId.charAt(0).toUpperCase() + platformId.slice(1)
       let icon = ''
-      for (const platformIcon of window.platformIcons) {
-        if (title.toLowerCase().includes(platformIcon.name)) {
-          icon = `<img src="${platformIcon.icon}" alt="${platformIcon.name}" class="me-1 icon">`
+      for (const platformInfo of window.platforms) {
+        if (title.toLowerCase().includes(platformInfo.name)) {
+          if (platformInfo.title) {
+            title = platformInfo.title
+          }
+
+          icon = `<img src="${platformInfo.icon}" alt="${platformInfo.name}" class="me-1 icon">`
           break
         }
       }

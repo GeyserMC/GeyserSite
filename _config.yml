@@ -63,12 +63,14 @@ descriptions:
 
       Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">standalone setup</a> page on the wiki for more information.
 
-platform_icons:
+platforms:
   - name: spigot
+    title: Spigot/Paper
     icon: img/icons/paper.png
   - name: velocity
     icon: img/icons/velocity.svg
   - name: bungee
+    title: BungeeCord
     icon: img/icons/waterfall.svg
   - name: fabric
     icon: img/icons/fabric.png

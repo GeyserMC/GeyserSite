@@ -21,6 +21,17 @@ window.addEventListener('load', () => {
   }
 })
 
+// Work out the previous version from the current version
+function getPreviousVersion (version) {
+  const parts = version.split('.')
+  if (parts.length === 1) {
+    return (parseInt(parts[0]) - 1).toString()
+  }
+
+  parts[parts.length - 1] = (parseInt(parts[parts.length - 1]) - 1).toString()
+  return parts.join('.')
+}
+
 function loadBuilds (target) {
   const tab = document.querySelector(target)
   const project = target.substring(1)
@@ -33,7 +44,39 @@ function loadBuilds (target) {
   const downloadButtons = buildsSection.querySelector('.download-buttons')
   const commitLog = tab.querySelector('.commit-log')
 
-  const processDownloadData = (data) => {
+  // Recursively get the remaining commits
+  const getRemainingCommits = async (version, count, maxCommits) => {
+    const prevVer = getPreviousVersion(version)
+    const data = await fetch(`https://download.geysermc.org/v2/projects/${project}/versions/${prevVer}/builds`).then((response) => response.json())
+
+    // Reverse the builds so the latest build is first
+    data.builds.reverse()
+
+    let htmlStr = ''
+
+    // Build the changelog
+    for (const build of data.builds) {
+      if (count >= maxCommits) {
+        break
+      }
+      for (const change of build.changes) {
+        if (count >= maxCommits) {
+          break
+        }
+
+        htmlStr += `<p><a href="https://github.com/GeyserMC/${project}/commit/${change.commit}">${change.commit.substring(0, 7)}</a> &bull; ${change.summary}</p>`
+        count++
+      }
+    }
+
+    if (count < maxCommits) {
+      htmlStr += await getRemainingCommits(data.version, count, maxCommits)
+    }
+
+    return htmlStr
+  }
+
+  const processDownloadData = async (data) => {
     if (data.error) {
       throw new Error(data.error)
     }
@@ -42,19 +85,25 @@ function loadBuilds (target) {
     data.builds.reverse()
 
     // Build the changelog
+    const maxCommits = 10
     let count = 0
     for (const build of data.builds) {
-      if (count >= 10) {
+      if (count >= maxCommits) {
         break
       }
       for (const change of build.changes) {
-        if (count >= 10) {
+        if (count >= maxCommits) {
           break
         }
 
         commitLog.innerHTML += `<p><a href="https://github.com/GeyserMC/${project}/commit/${change.commit}">${change.commit.substring(0, 7)}</a> &bull; ${change.summary}</p>`
         count++
       }
+    }
+
+    // If we dont have enough commits, get the previous version (recursive)
+    if (count < maxCommits) {
+      commitLog.innerHTML += await getRemainingCommits(data.version, count, maxCommits)
     }
 
     // Grab the latest build

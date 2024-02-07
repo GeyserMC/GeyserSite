@@ -76,6 +76,9 @@ platforms:
     icon: img/icons/fabric.png
   - name: standalone
     icon: img/icons/geyser.png
+  - name: neoforge
+    title: NeoForge
+    icon: img/icons/neoforge.png
 
 downloads:
   geyser:

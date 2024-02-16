@@ -79,6 +79,9 @@ platforms:
   - name: neoforge
     title: NeoForge
     icon: img/icons/neoforge.png
+  - name: viaproxy
+    title: ViaProxy
+    icon: img/icons/viaproxy.png
 
 downloads:
   geyser:

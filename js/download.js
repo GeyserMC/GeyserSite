@@ -9,10 +9,12 @@ window.addEventListener('load', () => {
       if (tabId === 'other') {
         const otherProject = hash[1]
         if (otherProject) {
-          tab.addEventListener('shown.bs.tab', () => {
+          const autoSelect = () => {
             const button = document.querySelector('button[data-bs-download="' + otherProject + '"]')
             button.click()
-          })
+            tab.removeEventListener('shown.bs.tab', autoSelect)
+          }
+          tab.addEventListener('shown.bs.tab', autoSelect)
         }
       }
 
@@ -146,7 +148,7 @@ function loadBuilds (target) {
                   <h5 class="card-title d-flex align-items-center">${icon}${title}</h5>
               </div>
               <div class="card-footer d-grid">
-                <a class="btn btn-success" href="https://download.geysermc.org/v2/projects/${latestBuild.project_id}/versions/latest/builds/latest/downloads/${platformId}">
+                <a class="btn btn-success" href="https://download.geysermc.org/v2/projects/${data.project_id}/versions/latest/builds/latest/downloads/${platformId}">
                   <i class="bi bi-download pe-1"></i> Download
                 </a>
               </div>

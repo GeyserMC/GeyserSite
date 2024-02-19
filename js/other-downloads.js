@@ -1,4 +1,4 @@
-/* global fetch processDownloadData */
+/* global fetch */
 
 window.otherDownloadsCache = {}
 
@@ -9,6 +9,8 @@ if (otherModal) {
 
     const downloadKey = button.getAttribute('data-bs-download')
     const download = window.otherDownloads[downloadKey]
+
+    window.location.hash = 'other-' + downloadKey
 
     const title = otherModal.querySelector('#otherModalLabel')
     title.textContent = download.title

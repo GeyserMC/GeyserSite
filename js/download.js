@@ -1,10 +1,19 @@
 /* global location bootstrap fetch */
 
 window.addEventListener('load', () => {
-  const hash = location.hash.replace(/^#/, '').toLowerCase() // Remove the # from the hash
-  if (hash) {
-    const tab = document.querySelector('.nav-tabs button[data-bs-target="#' + hash + '"]')
+  const hash = location.hash.replace(/^#/, '').toLowerCase().split('-') // Remove the # from the hash
+  const tabId = hash[0]
+  if (tabId) {
+    const tab = document.querySelector('.nav-tabs button[data-bs-target="#' + tabId + '"]')
     if (tab) {
+      if (tabId === 'other') {
+        const otherProject = hash[1]
+        tab.addEventListener('shown.bs.tab', () => {
+          const button = document.querySelector('button[data-bs-download="' + otherProject + '"]')
+          button.click()
+        })
+      }
+
       bootstrap.Tab.getOrCreateInstance(tab).show()
     }
   }

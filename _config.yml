@@ -10,50 +10,62 @@ twitter_username: geyser_mc
 github_username: GeyserMC
 discord_invite: geysermc
 
-descriptions:
-  spigot:
-    info: If you run a Paper or Spigot server without a proxy (i.e. Velocity) in front of it, this is the version to install.
-    setup: |
-      1. Download Geyser using the download button.
-      2. Stop your server (if it is running) and place Geyser in the plugins folder.
-      3. Start up your server and Geyser should be installed.
-      
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
-  velocity:
-    info: Velocity is a proxy that sits in front of multiple servers. If you are running a network with Velocity, this is the version to install.
-    setup: |
-      1. Download Geyser using the download button.
-      2. Stop your server (if it is running) and place Geyser in the plugins folder.
-      3. Start up your server and Geyser should be installed.
-  
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
-  bungeecord:
-    info: Waterfall / BungeeCord is a proxy that sits in front of multiple servers. If you are running a network with Waterfall or BungeeCord, this is the version to install.
-    setup: |
-      1. Download Geyser using the download button.
-      2. Stop your server (if it is running) and place Geyser in the plugins folder.
-      3. Start up your server and Geyser should be installed.
+platforms:
+  - name: spigot
+    title: Spigot/Paper
+    icon: img/icons/paper.png
+  - name: velocity
+    icon: img/icons/velocity.svg
+  - name: bungee
+    title: BungeeCord
+    icon: img/icons/waterfall.svg
+  - name: fabric
+    icon: img/icons/fabric.png
+  - name: standalone
+    icon: img/icons/geyser.png
+  - name: neoforge
+    title: NeoForge
+    icon: img/icons/neoforge.png
+  - name: viaproxy
+    title: ViaProxy
+    icon: img/icons/viaproxy.png
 
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
-    floodgate_id: bungee
-  fabric:
-    info: If you run a Fabric server without a proxy (i.e. Velocity) in front of it, this is the version to install.
-    setup: |
-      1. Download Geyser using the download button.
-      2. Stop your server (if it is running) and place Geyser in the mods folder.
-      3. Start up your server and Geyser should be installed.
+downloads:
+  geyser:
+    title: Geyser
+    info: "A bridge/proxy allowing you to connect to Minecraft: Java Edition servers with Minecraft: Bedrock Edition."
+    setup_url: https://wiki.geysermc.org/geyser/setup/
+  floodgate:
+    title: Floodgate
+    info: Hybrid mode plugin to allow for connections from Geyser to join online mode servers.
+    setup_url: https://wiki.geysermc.org/floodgate/setup/
+    external_builds:
+      - title: Fabric
+        link: https://modrinth.com/mod/floodgate
+  # hurricane:
+  #   title: Hurricane
+  #   info: Fixes for Bedrock players involving server behavior modification
+  #   setup: |
+  #     1. Download and drop into the `plugins` folder
+  #     2. Start the server
 
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
-  standalone:
-    info: In instances where you do not own the Minecraft server you want to join, or just want to run a separate Geyser setup from your main server, standalone allows you to run Geyser independently from everything else and you can use it to connect to any server.
-    setup: |
-      1. Download Geyser using the download button.
-      2. Create a new folder and place Geyser inside of it.
-      3. Double-click the jar and Geyser will start. Once this has happened, close Geyser.
-      4. In the newly created config.yml, open it up and set the remote address to the Java server you want to join.
-      5. Re-run Geyser again, and upon joining you should be routed to your Java Edition server!
-
-      Keep in mind that there may be additional steps involved, such as portforwarding. Please see the <a href="https://wiki.geysermc.org/geyser/setup/">setup</a> page on the wiki for more information.
+other_downloads:
+  geyserconnect:
+    title: GeyserConnect
+    info: GeyserConnect is an easy way for Bedrock Edition clients to connect to any Java Edition servers without having to run anything.
+    setup_url: https://wiki.geysermc.org/other/geyserconnect/
+  # hydraulic:
+  #   title: Hydraulic
+  #   tags: [ "beta" ]
+  #   info: "A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers."
+  #   setup: |
+  #     1. Drop the `Geyser-Fabric/Forge.jar` into the `mods` folder
+  #     2. Drop the `Hydraulic.jar` into the `mods` folder
+  #     3. Run the server
+  geyseroptionalpack:
+    title: GeyserOptionalPack
+    info: Optional Bedrock resource pack to extend Geyser functionality
+    setup_url: https://wiki.geysermc.org/other/geyseroptionalpack/
 
 # Front Matter Defaults
 defaults:

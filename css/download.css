@@ -2,11 +2,7 @@ section .nav-tabs .nav-link {
     color: var(--bs-white) !important;
 }
 
-section .nav-tabs .nav-link img {
+img.icon {
     width: 1.5em;
     height: 1.5em;
-}
-
-.col-sm .setup p {
-    white-space: pre-line;
 }

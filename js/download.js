@@ -156,6 +156,38 @@ function loadBuilds (target) {
           </div>`
     }
 
+    // Add any external build links
+    if ('external_builds' in window.downloads[data.project_id]) {
+      for (const externalBuild of window.downloads[data.project_id].external_builds) {
+        let title = externalBuild.title
+        let icon = ''
+        for (const platformInfo of window.platforms) {
+          if (title.toLowerCase().includes(platformInfo.name)) {
+            if (platformInfo.title) {
+              title = platformInfo.title
+            }
+
+            icon = `<img src="${platformInfo.icon}" alt="${platformInfo.name}" class="me-1 icon">`
+            break
+          }
+        }
+
+        downloadButtons.innerHTML += `
+            <div class="col-sm-12 col-lg-6 py-2">
+              <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title d-flex align-items-center">${icon}${title}</h5>
+                </div>
+                <div class="card-footer d-grid">
+                  <a class="btn btn-success" href="${externalBuild.link}">
+                    <i class="bi bi-download pe-1"></i> Download
+                  </a>
+                </div>
+              </div>
+            </div>`
+      }
+    }
+
     // Hide the placeholder
     placeholder.style.display = 'none'
   }

@@ -39,6 +39,9 @@ downloads:
     title: Floodgate
     info: Hybrid mode plugin to allow for connections from Geyser to join online mode servers.
     setup_url: https://wiki.geysermc.org/floodgate/setup/
+    external_builds:
+      - title: Fabric
+        link: https://modrinth.com/mod/floodgate
   # hurricane:
   #   title: Hurricane
   #   info: Fixes for Bedrock players involving server behavior modification

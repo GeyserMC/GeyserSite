@@ -93,4 +93,8 @@ if (otherModal) {
       })
     }
   })
+
+  otherModal.addEventListener('hidden.bs.modal', () => {
+    window.location.hash = 'other'
+  })
 }

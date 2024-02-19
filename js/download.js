@@ -8,10 +8,12 @@ window.addEventListener('load', () => {
     if (tab) {
       if (tabId === 'other') {
         const otherProject = hash[1]
-        tab.addEventListener('shown.bs.tab', () => {
-          const button = document.querySelector('button[data-bs-download="' + otherProject + '"]')
-          button.click()
-        })
+        if (otherProject) {
+          tab.addEventListener('shown.bs.tab', () => {
+            const button = document.querySelector('button[data-bs-download="' + otherProject + '"]')
+            button.click()
+          })
+        }
       }
 
       bootstrap.Tab.getOrCreateInstance(tab).show()

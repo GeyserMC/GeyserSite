@@ -109,7 +109,7 @@ function loadBuilds (target) {
           break
         }
 
-        commitLog.innerHTML += `<p><a href="https://github.com/GeyserMC/${project}/commit/${change.commit}">${change.commit.substring(0, 7)}</a> &bull; ${change.summary}</p>`
+        commitLog.innerHTML += `<p><a class="font-monospace" href="https://github.com/GeyserMC/${project}/commit/${change.commit}">${change.commit.substring(0, 7)}</a> &bull; ${change.summary}</p>`
         count++
       }
     }

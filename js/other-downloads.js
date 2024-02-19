@@ -19,14 +19,17 @@ if (otherModal) {
     info.innerHTML = download.info
 
     const setup = otherModal.querySelector('#otherModalSetup')
+    const footer = otherModal.querySelector('#otherModalFooter')
     if (download.setup_url) {
       otherModal.querySelector('#otherModalSetupTitle').style.display = 'none'
-      setup.innerHTML = `
+      footer.innerHTML = `
         <a class="btn btn-block btn-info" href="${download.setup_url}">
           <i class="bi bi-book pe-1"></i> Setup instructions
         </a>`
+      setup.innerHTML = ''
     } else {
       otherModal.querySelector('#otherModalSetupTitle').style.display = 'block'
+      footer.innerHTML = ''
       setup.innerHTML = download.setup
     }
 
@@ -35,6 +38,8 @@ if (otherModal) {
 
     const downloadButtons = otherModal.querySelector('#otherModalDownloadBtns')
     downloadButtons.innerHTML = ''
+
+    const downloadsTitle = otherModal.querySelector('#otherModelDownloadsTitle')
 
     const processDownloadData = (data) => {
       const releaseDate = new Date(data.time)
@@ -50,19 +55,26 @@ if (otherModal) {
 
         // If there are multiple downloads, use the name of the download
         if (downloadsCount > 1) {
+          downloadsTitle.style.display = 'block'
           title = data.downloads[platformId].name
+        } else {
+          downloadsTitle.style.display = 'none'
         }
 
-        downloadButtons.innerHTML += `
+        let buttonHtml = ''
+
+        buttonHtml += `
           <a class="btn btn-block btn-success" href="https://download.geysermc.org/v2/projects/${data.project_id}/versions/latest/builds/latest/downloads/${platformId}">
             <i class="bi bi-download pe-1"></i> Download ${title}`
 
         // Add the build number and release date if there is only one download
         if (downloadsCount === 1) {
-          downloadButtons.innerHTML += `<br><span class="fs-small">Build #${data.build} &bull; ${releaseDate.toLocaleDateString()}</span>`
+          buttonHtml += `<br><span class="fs-small">Build #${data.build} &bull; ${releaseDate.toLocaleDateString()}</span>`
         }
 
-        downloadButtons.innerHTML += '</a>'
+        buttonHtml += '</a>'
+
+        downloadButtons.innerHTML += buttonHtml
       }
 
       // Hide the placeholder

@@ -19,8 +19,8 @@
 
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ site.url }}">
-	<meta property="og:title" content="{{ site.title }}">
-	<meta property="og:description" content="{{ site.description }}">
+	<meta property="og:title" content="{{ site.title }}{% if page.title %}: {{ page.title }}{% endif %}">
+	<meta property="og:description" content="{% if page.title %}{{ page.subtitle }}{% else %}{{ site.description }}{% endif %}">
 	<meta property="og:image" content="/android-chrome-192x192.png">
 
 	<meta name="twitter:card" content="summary">

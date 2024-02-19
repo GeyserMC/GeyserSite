@@ -53,10 +53,7 @@ other_downloads:
   geyserconnect:
     title: GeyserConnect
     info: GeyserConnect is an easy way for Bedrock Edition clients to connect to any Java Edition servers without having to run anything.
-    setup: |
-      1. Download Geyser-Standalone
-      2. Drop the `GeyserConnect.jar` into the `extensions` folder
-      3. Run Geyser-Standalone
+    setup_url: https://wiki.geysermc.org/other/geyserconnect/
   # hydraulic:
   #   title: Hydraulic
   #   tags: [ "beta" ]
@@ -68,10 +65,7 @@ other_downloads:
   geyseroptionalpack:
     title: GeyserOptionalPack
     info: Optional Bedrock resource pack to extend Geyser functionality
-    setup: |
-      1. Download GeyserOptionalPack
-      2. Drop it into the `packs` folder
-      3. Start the server
+    setup_url: https://wiki.geysermc.org/other/geyseroptionalpack/
 
 # Front Matter Defaults
 defaults:

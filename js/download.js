@@ -104,7 +104,9 @@ function loadBuilds (target) {
       if (count >= maxCommits) {
         break
       }
-      for (const change of build.changes) {
+
+      const changes = build.changes.reverse()
+      for (const change of changes) {
         if (count >= maxCommits) {
           break
         }

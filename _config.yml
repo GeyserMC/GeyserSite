@@ -66,6 +66,14 @@ other_downloads:
     title: GeyserOptionalPack
     info: Optional Bedrock resource pack to extend Geyser functionality
     setup_url: https://wiki.geysermc.org/other/geyseroptionalpack/
+  thirdpartycosmetics:
+    title: ThirdPartyCosmetics
+    info: An extension that adds support for loading ears and other third party cosmetics on java players
+    setup: |
+      1. Install Geyser for your platform
+      2. Drop the `ThirdPartyCosmetics.jar` into the Geyser `extensions` folder (EG: `plugins/Geyser-Spigot/extensions`)
+      3. Start the server
+
 
 # Front Matter Defaults
 defaults:
